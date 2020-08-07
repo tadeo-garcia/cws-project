@@ -1,0 +1,34 @@
+Routes:
+
+/home 
+/signup
+/signin
+
+
+/events
+/events/create
+/events/:id
+/events/:id/edit
+
+/user/:id
+/user/dashboard
+/user/edit
+
+
+Templates: 
+
+layout.pug
+
+landing.pug
+sign-up.pug
+sign-in.pug
+
+events-list.pug
+event.pug
+event-create.pug
+event-edit.pug // optional
+
+
+dashboard.pug
+profile-edit.pug // optional
+profile-page.pug
