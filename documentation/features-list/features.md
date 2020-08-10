@@ -76,7 +76,7 @@ Tadeo - Project Lead
 
 
 
-Front-End:
+## Front-End:
 layout.pug
 
 GET /home 
@@ -107,7 +107,7 @@ profile-page.pug
 GET /user/edit *BONUS* 
 
 
-Back-End:
+## Back-End:
 
 POST /signin
 

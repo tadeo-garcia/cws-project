@@ -1,0 +1,10 @@
+npx sequelize model:generate --name User --attributes userName:string,hashedPassword:string,email:string,location:string,avatar:string,fullName:string,bio:text,interests:text
+
+npx sequelize model:generate --name UserEvent --attributes userId:integer,eventId:integer,hostId:integer
+
+npx sequelize model:generate --name Event --attributes eventTypeId:integer,date:date,time:time,userId:integer,hostId:integer,capacity:integer,description:text
+
+npx sequelize model:generate --name EventType --attributes type:string,eventBanner:string,eventCard:string,eventDescription:text,eventSuggestions:text,ageLimit:boolean
+
+
+  

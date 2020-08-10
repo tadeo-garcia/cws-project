@@ -1,3 +1,7 @@
+#
+node_modules/
+.DS_Dtore
+
 # Logs
 logs
 *.log
@@ -103,10 +107,6 @@ dist
 # TernJS port file
 .tern-port
 
-<<<<<<< HEAD
-text.txt
-=======
 # Shaie brainstorming folder
 shaiePracticeFolder/
->>>>>>> 14bb272e36fd8409c1bedad02f94ac6b50cad1bb
 
