@@ -19,7 +19,8 @@ module.exports = {
       },
       time: {
         allowNull: false,
-        type: Sequelize.TIME
+        type: Sequelize.TIME,
+        defaultValue: Sequelize.fn("NOW")
       },
       userId: {
         type: Sequelize.INTEGER,
@@ -39,11 +40,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("NOW")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("NOW")
       }
     });
   },

@@ -1,4 +1,7 @@
 'use strict';
+
+const bcrypt = require('bcryptjs');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     userName: {
@@ -28,17 +31,22 @@ module.exports = (sequelize, DataTypes) => {
     avatar: DataTypes.STRING,
     fullName: DataTypes.STRING,
     bio: DataTypes.TEXT,
-    interests: DataTypes.TEXT
+    interests: DataTypes.TEXT,
   }, {});
+  // Doesn't work in the users.js route but can maybe try later . . . . . 
+  User.prototype.validatePassword = function (password) {
+    return bcrypt.compareSync(password, this.hashedPassword.toString())
+  }
+
   User.associate = function (models) {
-    User.belongsToMany(models.Events, {
+    User.belongsToMany(models.Event, {
       through: models.UserEvent,
       foreignKey: 'userId',
       otherKey: 'eventId'
     }),
-    User.hasMany(models.Events, {
-      foreignKey: 'hostId'
-    })
+      User.hasMany(models.Event, {
+        foreignKey: 'hostId'
+      })
   };
   return User;
 };

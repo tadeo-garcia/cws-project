@@ -2,7 +2,7 @@ Routes:
 
 /home 
 /signup
-/signin
+/login
 
 
 /events

@@ -1,0 +1,21 @@
+extends layout.pug
+
+include includes/auth-input.pug
+    
+append head
+  script(src='/public/js/signup.js' type='module' defer)
+
+block content
+
+  form#signup-form
+    h1 Sign up for Covid with Stalkers!!
+    ul#errors-container
+    +authInput('Email', 'email')
+      input(type="text" name='email' required)
+    +authInput('User Name', 'userName')
+      input(type="text" name='userName' required)
+    +authInput('Password', 'password')
+      input(type="password" name='password' required)
+    +authInput('Password', 'password2')
+      input(type="password" name='password2' required)
+    button(type='submit') Sign Up
