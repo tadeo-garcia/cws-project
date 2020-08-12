@@ -2,10 +2,12 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('UserEvents', [{
-      userId: 1, eventId: 1
-    }], {fields: ['userId', 'eventId']});
-
+    return queryInterface.bulkInsert('UserEvents', [
+      { userId: 1, eventId: 2 },
+      { userId: 2, eventId: 2 },
+      { userId: 1, eventId: 1 },
+      { userId: 3, eventId: 1 }
+    ], { fields: ['userId', 'eventId'] });
   },
 
   down: (queryInterface, Sequelize) => {
