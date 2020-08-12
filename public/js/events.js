@@ -7,9 +7,16 @@ const getEvents = async () => {
 const createEventLi = (event) => {
     const date = new Date(event.date)
     return `
-<div class ='event'>
-${event.description}
-</div>
+    <div class="card-event">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+     <div class="card-event-info">
+      <img src="${event.EventType.eventCard}" />
+        <div>
+        <h2>${event.EventType.description}</h2>
+        ${event.description}
+      </div>
+      </div>
+    </div>
   `;
 };
 
