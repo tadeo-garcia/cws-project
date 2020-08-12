@@ -4,7 +4,7 @@ include includes/auth-input.pug
 
 append head
   script(src='/public/js/login.js' type='module' defer)
-    
+
 block content
 
   form#login-form(action='/token' method='POST')
@@ -18,4 +18,5 @@ block content
     +authInput('Password', 'password')
       input(type="password" name='password' required)
     button(type='submit') Log in
+
 
