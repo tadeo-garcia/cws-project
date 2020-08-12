@@ -6,8 +6,9 @@ form.addEventListener('submit', async (e) => {
   const formData = new FormData(form);
   const userName = formData.get('userName');
   const password = formData.get('password');
-
-  const body = { userName, password }
+  const _csrf= formData.get('_csrf')
+  console.log(_csrf);
+  const body = { userName, password, _csrf }
   
   const res = await fetch('/api/users/token', {
     method: 'POST',
@@ -25,6 +26,5 @@ form.addEventListener('submit', async (e) => {
     return; 
   }
 
-  console.log(data);
-  window.location.href = '/';
+  window.location.href = '/events';
 });

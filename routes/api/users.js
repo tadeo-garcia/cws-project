@@ -7,7 +7,6 @@ const csrfProtection = require("csurf")({ cookie: true })
 
 const bcrypt = require('bcryptjs')
 const { expiresIn } = require('../../config').jwtConfig;
-// const jwt = require('jsonwebtoken');
 const db = require('../../db/models');
 const { Op } = require('sequelize');
 const { User } = db;
@@ -88,5 +87,18 @@ router.post('/token',
 
     res.json({ id: user.id, token });
   }));
+
+router.get('/token', routeHandler(async (req, res, next) => {
+  if (req.user) {
+    return res.json({
+      id: req.user.id,
+      userName: req.user.userName
+    });
+  }
+  const err = new Error('Invalid token');
+  err.status = 401;
+  next(err);
+}));
+
 
 module.exports = router; 

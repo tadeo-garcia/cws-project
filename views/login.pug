@@ -10,6 +10,7 @@ block content
   form#login-form(action='/token' method='POST')
     h1 Log In
     #errors-container
+    input(type="hidden" name="_csrf" value=csrfToken)
     +authInput('Email', 'email')
       input(type="text" name='email' required)
     +authInput('User Name', 'userName')

@@ -10,9 +10,12 @@ form.addEventListener('submit', async (e) => {
   const userName = formData.get('userName');
   const password = formData.get('password');
   const password2 = formData.get('password2');
-  
-  
-  const body = { userName, password, password2, email };
+  const token = formData.get('_csrf')
+// router.post("/guest", csrfProtection, validateGuest, (req, res) => {
+  // REST OF CODE NOT SHOWN
+
+
+  const body = { email, userName, password, password2, token };
   errorsContainer.innerHTML = ''
 
   const res = await fetch('/api/users', {
@@ -27,7 +30,7 @@ form.addEventListener('submit', async (e) => {
 
   if (!res.ok) {
     const { message, errors } = data;
-    
+
     console.log(errors)
     for (let error of errors) {
       const errorLi = document.createElement('li');
@@ -39,7 +42,7 @@ form.addEventListener('submit', async (e) => {
     }
     return;
   }
-  
+
   // console.log(data);
   window.location.href = '/';
 });

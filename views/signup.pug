@@ -10,6 +10,7 @@ block content
   form#signup-form
     h1 Sign up for Covid with Stalkers!!
     ul#errors-container
+    input(type="hidden" name="_csrf" value=csrfToken)
     +authInput('Email', 'email')
       input(type="text" name='email' required)
     +authInput('User Name', 'userName')

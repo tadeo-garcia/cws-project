@@ -1,4 +1,17 @@
 extends layout.pug
 
+append head
+  script(src="/public/js/events.js" type="module" defer)
+
 block content
-    
+  .events
+  //-   each event in events
+  //-     .eventsList
+  //-       ul 
+  //-         li= event.time
+  //-         li= event.date
+  //-         li= event.userId
+  //-         li= event.hostId
+  //-         li= event.capacity
+  //-         li= event.description
+      
