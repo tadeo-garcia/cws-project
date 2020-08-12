@@ -12,7 +12,7 @@ Tadeo - Project Lead
 
 # Features
 
-## 1. Sign up / Sign in (Day 1, Monday)
+## 1. Sign up / Sign in (Day 1,2 Monday & Tuesday)
         - As a person who would like to use this website
 
         - I want to be able to sign up and log in
@@ -29,7 +29,7 @@ Tadeo - Project Lead
         - So that I can meet others who also share the same interest
 
 
-## 3. Access dashboard (Day 2, Tuesday)
+## 3. Access dashboard (Day 3, Wednesday)
 
         - As a user who likes to keep track of my events
 
@@ -38,7 +38,7 @@ Tadeo - Project Lead
         - so that I can see them all in one place
 
 
-## 4. Host events (Day 3, Wednesday)
+## 4. Host events (Day 4, Thursday)
 
         -As a person who likes to organize events
 
@@ -47,7 +47,7 @@ Tadeo - Project Lead
         -so that I can share my hobby with others 
 
 
-## 5. Google API * BONUS * (Day 4, Thursday)
+## 5. Google API * BONUS * (Day 5, Friday)
 
         -As a person who is interested in sharing cultures
 
@@ -56,7 +56,7 @@ Tadeo - Project Lead
         -so that I can know where everyone is from
 
 
-## 6. Provide user suggestions *BONUS* (Day 5, Friday)
+## 6. Provide user suggestions *BONUS* (Day 6, Saturday)
 
         -As a host who wants to set a theme
 
@@ -65,7 +65,7 @@ Tadeo - Project Lead
         -So everyone can participate
 
 
-## 7. Edit profile (Day 5, Friday)
+## 7. Edit profile (Day 7, Sunday)
 
         -As a user who likes to interact with other users
 
@@ -83,10 +83,10 @@ GET /home
 landing.pug
 
 GET /signup
-sign-up.pug
+signup.pug
 
-GET /signin
-sign-in.pug
+GET /login
+login.pug
 
 GET /events
 events-list.pug

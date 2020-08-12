@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       fullName: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.STRING
       },
       bio: {

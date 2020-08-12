@@ -1,0 +1,21 @@
+extends layout.pug
+
+include includes/auth-input.pug
+
+append head
+  script(src='/public/js/login.js' type='module' defer)
+    
+block content
+
+  form#login-form(action='/token' method='POST')
+    h1 Log In
+    #errors-container
+    input(type="hidden" name="_csrf" value=csrfToken)
+    +authInput('Email', 'email')
+      input(type="text" name='email' required)
+    +authInput('User Name', 'userName')
+      input(type="text" name='userName' required)
+    +authInput('Password', 'password')
+      input(type="password" name='password' required)
+    button(type='submit') Log in
+
