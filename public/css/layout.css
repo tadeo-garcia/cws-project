@@ -1,0 +1,32 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+    
+     
+
+
+.nav-bar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #3D1308;
+}
+
+/* .home-link-logo{
+    padding-right: 150px;
+}
+
+.nav-links{
+    padding-left: 150px;
+} */
+
+.navlink{
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}

@@ -2,49 +2,51 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-  return queryInterface.bulkInsert('EventTypes', [{
-    type: 'Paint and Wine', 
-    eventBanner:'wineBanner.img', 
-    eventCard:'wineCard.img', 
-    eventDescription:'Paint while being a wine-o', 
-    eventSuggestions:'wine, paint', 
-    ageLimit: true
+    return queryInterface.bulkInsert('EventTypes', [{
+      type: 'Paint by Wine',
+      eventBanner: 'wineBanner.img',
+      eventCard: "/public/pics/book-club/dustin-tramel-vcXxSh0GHBc-unsplash.jpg",
+      eventDescription: 'Paint while being a wine-o',
+      eventSuggestions: 'wine, paint',
+      ageLimit: true
+    },
+    {
+      type: 'High Tea',
+      eventBanner: 'eaBanner.img',
+      eventCard: 'teaCard.img',
+      eventDescription: 'Have a nice cup of tea and a crumpet',
+      eventSuggestions: 'tea, crumpets',
+      ageLimit: false
+    },
+    {
+      type: 'Milkshakes',
+      eventBanner: 'milkshakeBanner.img',
+      eventCard: "/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg",
+      eventDescription: 'Enjoy a calorie bomb with others',
+      eventSuggestions: 'milkshakes',
+      ageLimit: false
+    },
+    {
+      type: 'Share your pets',
+      eventBanner: 'petsBanner.img',
+      eventCard: 'petsCard.img',
+      eventDescription: 'Share your pets with some stalkers!',
+      eventSuggestions: 'doggos and cats',
+      ageLimit: false
+    }],
+      {
+        fields: [
+          'type',
+          'eventBanner',
+          'eventCard',
+          'eventDescription',
+          'eventSuggestions',
+          'ageLimit']
       },
-      {
-    type: 'High Tea', 
-    eventBanner:'eaBanner.img',
-    eventCard:'teaCard.img', 
-    eventDescription:'Have a nice cup of tea and a crumpet', 
-    eventSuggestions:'tea, crumpets', 
-    ageLimit: false
-      }],
-      {
-    type: 'Milkshakes', 
-    eventBanner:'milkshakeBanner.img', 
-    eventCard:'milkshakeCard.img', 
-    eventDescription:'Enjoy a calorie bomb with others', 
-    eventSuggestions:'milkshakes', 
-    ageLimit: false
-      }, 
-      {
-    type: 'Share your pets', 
-    eventBanner:'petsBanner.img', 
-    eventCard:'petsCard.img', 
-    eventDescription:'Share your pets with some stalkers!', 
-    eventSuggestions:'doggos and cats', 
-    ageLimit: false
-      },
-      { fields: [ 
-        'type', 
-        'eventBanner', 
-        'eventCard', 
-        'eventDescription', 
-        'eventSuggestions', 
-        'ageLimit' ]},
-        )
+    )
   },
   down: (queryInterface, Sequelize) => {
-   return queryInterface.bulkDelete('EventTypes', null, {});
-  
+    return queryInterface.bulkDelete('EventTypes', null, {});
+
   }
 };
