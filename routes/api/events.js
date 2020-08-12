@@ -9,7 +9,9 @@ db = require("../../db/models");
 const { Event, User } = db;
 
 router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => {
-    const events = await Event.findAll()
+    const events = await Event.findAll(
+        {include: EventType}
+    )
     console.log(events)
     res.json({events})
     // console.log(response)
