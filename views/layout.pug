@@ -4,7 +4,7 @@ html(lang="en")
     block head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0" )
-    link(rel="icon" href="/public/cwsfavicon2.png" type="image/png")
+    link(rel="icon" href="/public/cwsfavicon.png" type="image/png")
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
     link(rel="stylesheet" href="public/css/layout.css" type="text/css")
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Atma' type='text/css')
@@ -16,15 +16,15 @@ html(lang="en")
   header
     div.nav-bar
       div
-        img.flavicon(src="cwsfavicon2.png", alt="cws" width='10px' height='10px')
-        a.homelink(href='/') Covid With Strangers
+        img(src="/public/cwsfavicon.png", alt="cws")
+        a.navlink(href='/') Covid With Strangers
       div.nav-links
         a.navlink(href='/events') Events
         a.navlink(href='/') Hosting
         a.navlink(href='/login') Log In
         a.navlink(href='/signup') Sign Up
 
-    
+
     block content
       h1 LAYOUT PAGE
       //- img(src='pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg')
