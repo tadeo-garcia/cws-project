@@ -11,7 +11,7 @@ const createEventLi = (event) => {
     <div class="card-event-info">
       <div>
         <h2>${event.EventType.type}</h2>
-        <p>${event.description}</p>
+        <p>${event.EventType.eventDescription}</p>
       </div>
       <h2 class="card-event-profile">${event.host.fullName}</h2>
       <img src=${event.host.avatar} class="card-event-host avatar-bordered" />
