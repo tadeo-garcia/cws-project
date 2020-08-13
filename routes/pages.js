@@ -28,6 +28,11 @@ router.get('/events', csrfProtection, async(req, res) => {
   res.render('events');
 })
 
+router.get('/hosting', csrfProtection, async (req, res) => {
+
+  res.render('hosting');
+})
+
 router.get('/', csrfProtection, (req, res)=>{
   res.render('home')
 })

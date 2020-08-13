@@ -12,11 +12,18 @@ router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => {
     const events = await Event.findAll({
         include: [
             { model: EventType },
-        //  { model: User}
+            // {
+            //     model: User,
+            //     through: { model: UserEvent, where: { eventId: 1 } }
+            // }
+            //         where: { id: 1}
+            // }
+            //  { model: User, through: { model: UserEvent }}
             // { model: UserEvent, where: }
             //  where: match userevent to event???}
             // , through: { model: UserEvent } }
-        ]})
+        ]
+    })
     res.json({ events })
 }))
 
