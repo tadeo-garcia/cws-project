@@ -21,7 +21,7 @@ const getEvents = async () => {
     <h2>${event.EventType.type}</h2>
     <p>${event.description}</p>
   </div>
-  <h2 class="card-event-profile">Host Name</h2>
+  <h2 class="card-event-profile">${event.User.fullName}</h2>
   <img src="/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg" class="card-event-host avatar-bordered" />
 </div>
 </div> */
@@ -29,15 +29,19 @@ const createEventLi = (event) => {
   const date = new Date(event.date)
   return `
   <div class="card-event">
-  <img src=${event.EventType.eventCard} />
-  <div class="card-event-info">
-    <div>
-      <h2>${event.EventType.type}</h2>
-      <p>${event.description}</p>
+    <img src=${event.EventType.eventCard} />
+    <div class="card-event-info">
+      <div>
+        <h2>${event.EventType.type}</h2>
+        <p>${event.description}</p>
+      </div>
+      <h2 class="card-event-profile">Name Goes here</h2>
+      <img src="/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg" class="card-event-host avatar-bordered" />
     </div>
-    <h2 class="card-event-profile">Host Name</h2>
-    <img src="/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg" class="card-event-host avatar-bordered" />
-  </div>
+    <div class="button-div">
+      <a href="/event/${event.id}">
+      <button class="button">Sign up now</button>
+    </div>
   </div>
   `
 };

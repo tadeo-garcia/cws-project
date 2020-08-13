@@ -3,32 +3,20 @@ extends layout.pug
 include includes/auth-input.pug
 
 append head
-  link(rel="stylesheet" href="public/css/form.css" type="text/css")
+  link(rel="stylesheet" href="public/css/login-form.css" type="text/css")
   script(src='/public/js/login.js' type='module' defer)
 
 block content
-  .form-container
-    form#login-form(action='/token' method='POST')
-      h1 Hey there stranger!
-      h5 It's good to have you back. Sign in here and sign up for your next virtual stalking!
-      ul#errors-container
+  .main-container
+    .login-div
+      p.login-text Hey there stranger!
+      p.description-text It's good to have you back. Sign in here and sign up for your next virtual meeting!
+    .form-container
+      form#login-form(action='/token' method='POST')
+        ul#errors-container
         input.form-input(type="hidden" name="_csrf" value=csrfToken)
-        +authInput()
-        input.form-input(type="text" name='email' required placeholder='Email')
-        +authInput()
-        input.form-input(type="text" name='userName' required placeholder='User Name')
-        +authInput()
-        input.form-input(type="password" name='password' required placeholder='Password')
-      button.form-input.button(type='submit') Log in
-  .footer-container
-    .side-link-container
-      a.navlink(href='/events') Events
-      a.navlink(href='/') Hosting
-      a.navlink(href='/Facebook') Facebook
-      a.navlink(href='/Twitter') Twitter
-      br
-      a.navlink(href='/Facebook') Terms of Service
-      a.navlink(href='/Twitter') Privacy Policy
-    .description-container
-      p Covid With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way.
-      p We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.
+        input.form-input(type="text" name='email' required placeholder='    Email Address')
+        input.form-input(type="text" name='userName' required placeholder='    User Name')
+        input.form-input(type="password" name='password' required placeholder='    Password')
+        button.form-input.button(type='submit') Sign in
+        a.already(href="/login") If you've already done this before, click here to log in
