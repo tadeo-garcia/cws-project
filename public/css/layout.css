@@ -1,32 +1,46 @@
  * {
-     margin: 0;
-     padding: 0;
+    font-family: canada-type-gibson, sans-serif;
+    margin: 0;
+    padding: 0;
  }
     
-     
-
+a:hover{
+    color:  #d5d5d5;
+}    
 
 .nav-bar {
+    height: 60px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 18px;
+    font-size: 12px;
     display: flex; 
     flex-direction: row;
-    justify-content: space-around;
-    background-color: #3D1308;
+    align-items: center;
+    justify-content: center;
+    background-color: #120202;
 }
 
-/* .home-link-logo{
+.homelink{
+    color: white;
+    font-size: 16px;
+    font-family: 'Atma';
     padding-right: 150px;
 }
 
 .nav-links{
     padding-left: 150px;
-} */
+}
 
 .navlink{
     color: white;
-    font-weight: bold;
     padding-left: 5px;
     padding-right: 5px;
+    font-variant-caps: all-small-caps;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.flavicon {
+    width: 20px;
+    height: 20px;
 }
