@@ -9,7 +9,7 @@ module.exports = {
         hashedPassword: await bcrypt.hash('password', 10), 
         email: 'joseph@smith.com', 
         location: 'dallas', 
-        avatar: 'person.jpg', 
+        avatar: "/public/pics/profile-pics/ahmed-firdaus-N7HRLjqNDqg-unsplash.jpg", 
         fullName:'Joseph Smith', 
         bio: "I love strangers", 
         interests:'stalking'
@@ -19,7 +19,7 @@ module.exports = {
         hashedPassword: await bcrypt.hash('password', 10), 
         email: 'leeory@jenkins.com', 
         location: 'Azeroth', 
-        avatar: 'person2.jpg', 
+        avatar: '/public/pics/profile-pics/ben-parker-OhKElOkQ3RE-unsplash.jpg', 
         fullName:'Leeroy Jenkins', 
         bio: "I love chicken", 
         interests:'charging'
@@ -29,7 +29,7 @@ module.exports = {
         hashedPassword: await bcrypt.hash('password', 10), 
         email: 'mary@smith.com', 
         location: 'Springfield', 
-        avatar: 'person3.jpg', 
+        avatar: '/public/pics/profile-pics/annie-spratt-MBjG3mgBEno-unsplash.jpg', 
         fullName:'Mary Smith', 
         bio: "I love facebook", 
         interests:'painting by wine'

@@ -45,7 +45,8 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'eventId'
     }),
       User.hasMany(models.Event, {
-        foreignKey: 'hostId'
+        foreignKey: 'hostId',
+        // aliasing to differentiate how we connect
       })
   };
   return User;

@@ -1,0 +1,29 @@
+extends layout
+
+append head
+  //- script(src="/api/event/:id" type="module" defer)
+  link(rel="stylesheet" href="public/css/eventJoin.css" type="text/css")
+
+block content
+  .joinEvent-container
+    .joinEventInfo
+      .joinEventInfo-heading
+        //- h2 JOIN #{host.name} FOR TEA TIME
+        h2 JOIN BOB FOR TEA TIME
+      hr
+      .joinEventInfo-info
+        //- p #{event.date}
+        //- p #{event.time}
+        //- p event date
+        //- p event time
+        p Online Zoom
+        h5 #{url}
+        p Send to a friend that should be here (especially if you can't be here yourself!)
+        hr
+        h2  #{capacity} SEAT LEFT!
+      .joinEvent-capacity
+
+    .joinEventForm
+    .teaTimeAbout
+    .meetTheHost
+    .hostBio

@@ -20,6 +20,7 @@ a:hover{
 }
 
 .homelink{
+    padding-left: 15px;
     color: white;
     font-size: 16px;
     font-family: 'Atma';
@@ -44,14 +45,20 @@ a:hover{
     height: 20px;
 }
 
-#signup {
+#extrapad {
+    padding-right: 20px
+}
+
+#signup, #signout {
     background-color: white;
     color: black;
     padding:7px 15px;
     border-radius: 3px;
 }
 
-#signup:hover{
+#signup:hover,
+#signout:hover
+{
     background-color: #444444;
     border: 2px solid white;
     

@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'userId',
     }),
     Event.belongsTo(models.User, {
-      foreignKey: 'hostId'
+      foreignKey: 'hostId',
+      //aliases as host to differentiate connections
+      as: 'host'
     }),
     Event.belongsTo(models.EventType, {
       foreignKey: 'eventTypeId'

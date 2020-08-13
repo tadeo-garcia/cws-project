@@ -88,6 +88,12 @@ router.post('/token',
     res.json({ id: user.id, token });
   }));
 
+router.delete('/session', routeHandler(async (req, res) => {
+  res.clearCookie('token');
+  res.json({ message: 'success' });
+}));
+
+
 router.get('/token', routeHandler(async (req, res, next) => {
   if (req.user) {
     return res.json({

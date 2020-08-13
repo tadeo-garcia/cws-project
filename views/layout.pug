@@ -9,6 +9,7 @@ html(lang="en")
     link(rel="stylesheet" href="public/css/layout.css" type="text/css")
     link(rel="stylesheet" href="public/css/footer.css" type="text/css")
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Atma' type='text/css')
+    script(src='/public/js/demouser.js' type='module' defer)
     //- link(rel="icon" href="/public/Sketch86151351.png" type="image/png")
     //- link(rel="icon" type="image/png" href="https://example.com/favicon.png")
     title Covid With Strangers
@@ -17,12 +18,13 @@ html(lang="en")
   header
     div.nav-bar
       div
-        img(src="/public/cwsfavicon.png", alt="cws" width='70' height='50')
+        img(src="/public/white_mask.png", alt="cws" width='35' height='35')
         a.homelink(href='/') Covid With Strangers
       div.nav-links
         a.navlink(href='/events') Events
         a.navlink(href='/hosting') Hosting
-        a.navlink(href='/login') Log In
+        a.navlink#demouser(href='/events') Demo User
+        a.navlink#extrapad(href='/login') Log In
         a.navlink#signup(href='/signup') Sign Up
 
 
