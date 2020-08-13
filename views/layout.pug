@@ -7,15 +7,17 @@ html(lang="en")
     link(rel="icon" href="/public/cwsfavicon2.png" type="image/png")
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
     link(rel="stylesheet" href="public/css/layout.css" type="text/css")
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Atma' type='text/css')
     //- link(rel="icon" href="/public/Sketch86151351.png" type="image/png")
     //- link(rel="icon" type="image/png" href="https://example.com/favicon.png")
     title Covid With Strangers
   body
+    //- img.flavicon(src="cwsfavicon2.jpg", alt="cws" width='10px' height='10px')
   header
     div.nav-bar
       div
-        img(src="cws-project/public/cwsfavicon2.png", alt="cws")
-        a.navlink(href='/') Covid With Strangers
+        img.flavicon(src="cwsfavicon2.png", alt="cws" width='10px' height='10px')
+        a.homelink(href='/') Covid With Strangers
       div.nav-links
         a.navlink(href='/events') Events
         a.navlink(href='/') Hosting

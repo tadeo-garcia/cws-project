@@ -14,6 +14,17 @@ const getEvents = async () => {
 //${event.User.avatar} to go in avatar-bordered
 // ${event.User.fullName} to go in Host Name
 // ${event.User.avatar} to go in avatar img
+/* <div class="card-event">
+<img src=${event.EventType.eventCard} />
+<div class="card-event-info">
+  <div>
+    <h2>${event.EventType.type}</h2>
+    <p>${event.description}</p>
+  </div>
+  <h2 class="card-event-profile">Host Name</h2>
+  <img src="/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg" class="card-event-host avatar-bordered" />
+</div>
+</div> */
 const createEventLi = (event) => {
   const date = new Date(event.date)
   return `
@@ -27,7 +38,7 @@ const createEventLi = (event) => {
     <h2 class="card-event-profile">Host Name</h2>
     <img src="/public/pics/milkshake-event/jonathan-borba-7TeR1A1MUpM-unsplash.jpg" class="card-event-host avatar-bordered" />
   </div>
-</div
+  </div>
   `
 };
 

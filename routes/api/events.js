@@ -10,9 +10,9 @@ const { Event, User, EventType, UserEvent } = db;
 
 router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => {
     const events = await Event.findAll({
-        include: [{ model: EventType },
-
-        //  { model: UserEvent, where: {eventId: Event.id }}
+        include: [
+            { model: EventType },
+        //  { model: User}
             // { model: UserEvent, where: }
             //  where: match userevent to event???}
             // , through: { model: UserEvent } }
