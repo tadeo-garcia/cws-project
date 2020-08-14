@@ -4,7 +4,7 @@ const router = express.Router();
 const app = express();
 const csrfProtection = require("csurf")({ cookie: true })
 db = require('../db/models');
-const { Event, User } = db;
+const { Event, User, EventType } = db;
 
 
 app.use(express.json());
@@ -18,48 +18,34 @@ router.get('/events', csrfProtection, async (req, res) => {
 })
 
 router.get('/events/:id', csrfProtection, async (req,res)=>{
-  // console.log(req.params.id)
-  // const eventId = 1 // req.params.id
-  // const event = await Event.findByPk({
-  //     eventId,
-      // include: [
-      //     { model: User, as: 'host' },
-      //     { model: EventType }
-      // ]
-  })
+  const eventId = req.params.id
+  console.log(eventId);
+  const event = await Event.findAll({
+    where: {id: eventId},
+      include: [
+          { model: User, as: 'host' },
+          { model: EventType }
+      ]
+    })
 
-  // res.json({ event })
-  res.render('eventJoin');
+  res.render('eventJoin', {event: event[0], csrfToken: req.csrfToken() });
 })
 
 router.get('/login', csrfProtection, (req, res) => {
-  if (req.user) {
-    res.redirect('/dashboard');
-    return;
-  }
+  
   res.render('login', { csrfToken: req.csrfToken() });
 });
 
 
 router.get('/signup', csrfProtection, (req, res) => {
-  if (req.user) {
-    res.redirect('/dashboard');
-    return;
-  }
+
   res.render('signup', { csrfToken: req.csrfToken() });
 });
 
-// router.get('/demouser', csrfProtection, (req, res) => {
-//   if (!req.user) {
-//     res.redirect('/login');
-//     return;
-//   }
-//   res.render('hosting', { csrfToken: req.csrfToken() });
-// });
 
 router.get('/hosting', csrfProtection, async (req, res) => {
   if (!req.user) {
-    res.redirect('/login')
+    res.render('login-first')
     return;
   }
   res.render('hosting');

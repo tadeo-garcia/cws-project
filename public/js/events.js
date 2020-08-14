@@ -9,11 +9,11 @@ const createEventLi = (event) => {
   return `<div class="card-event">
     <img src=${event.EventType.eventCard} />
     <div class="card-event-info">
-      <div>
+      <div class="card-left-div">
         <h2>${event.EventType.type}</h2>
         <p>${event.EventType.eventDescription}</p>
       </div>
-      <h2 class="card-event-profile">${event.host.fullName}</h2>
+      <h2 class="card-event-profile">Host: ${event.host.fullName}</h2>
       <img src=${event.host.avatar} class="card-event-host avatar-bordered" />
     </div>
     <div class="button-div">

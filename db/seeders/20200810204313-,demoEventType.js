@@ -4,8 +4,8 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('EventTypes', [{
       type: 'Paint by Wine',
-      eventBanner: 'public/pics/paint-by-wine/bill-williams-eq5O0oPSEZE-unsplash.jpg',
-      eventCard: "/public/pics/book-club/dustin-tramel-vcXxSh0GHBc-unsplash.jpg",
+      eventBanner: '/public/pics/paint-by-wine/nacho-dominguez-argenta-F_ilCik66Hg-unsplash.jpg',
+      eventCard: "/public/pics/paint-by-wine/bill-williams-eq5O0oPSEZE-unsplash.jpg",
       eventDescription: 'Grab your paintbrush and a glass of wine',
       eventSuggestions: 'wine, paint',
       ageLimit: true

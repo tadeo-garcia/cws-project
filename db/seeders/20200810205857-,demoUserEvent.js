@@ -17,7 +17,6 @@ return queryInterface.bulkInsert('UserEvents', [
 { userId: 1, eventId: 5 },
 { userId: 3, eventId: 5 },
 //event 6 3 host
-{ userId: 1, eventId: 6 }
 ], { fields: ['userId', 'eventId'] });
 },
 

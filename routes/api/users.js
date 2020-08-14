@@ -106,5 +106,33 @@ router.get('/token', routeHandler(async (req, res, next) => {
   next(err);
 }));
 
+router.post('/token-demo',
+  csrfProtection,
+  validateUsername,
+  handleValidationErrors,
+  routeHandler(async (req, res, next) => {
+    // res.json({ message: 'test' })
+  
+    
+    const demoUser = await User.findByPk(1)
+    console.log(demoUser); 
+
+    if (!demoUser) {
+      // console.log('HERE IS THE USER' + user)
+      const err = new Error('Invalid user name or password.')
+      err.status = 401;
+      err.title = "Unauthorized";
+      console.log(err);
+      throw err
+    }
+
+    const token = await getUserToken(demoUser);
+
+    res.cookie('token', token, { maxAge: expiresIn * 1000 });
+
+    res.json({ id: demoUser.id, token });
+  }));
+
+
 
 module.exports = router; 
