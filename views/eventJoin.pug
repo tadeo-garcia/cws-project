@@ -1,10 +1,12 @@
 extends layout.pug
 
 append head
+  script(src="/public/js/eventid.js" type="module" defer)
   link(rel="stylesheet" href="/public/css/eventJoin.css" type="text/css")
 
 block content
   .joinEvent-container
+  button.button
     .columnOne
       .joinEventInfo
         .joinEventInfo-heading
@@ -23,11 +25,11 @@ block content
             .bar(style='width:83.3333334%')
               .barDiv
             //- each user in event.User
-      .joinEventForm
-      .teaTimeAbout
-    .columnTwo
-      .meetTheHost
-      .hostBio
+    //-   .joinEventForm
+    //-   .teaTimeAbout
+    //- .columnTwo
+    //-   .meetTheHost
+    //-   .hostBio
 
 
 //- ${event.EventType.eventDescription}
