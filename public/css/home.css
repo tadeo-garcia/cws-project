@@ -1,0 +1,68 @@
+.button {
+    background-color: #210303;
+    color: white;
+    padding: 15px 65px;
+    border-radius: 8px;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+}
+
+.button:hover{
+    background-color: #120202;
+}
+
+.top-banner-container{
+    background-size: cover;
+    background-image: url('/public/pics/home/bundo-kim-Ma4GJz6vgsE-unsplash.jpg');
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.lower-banner-container{
+    background-color: #c6c6c6;
+    height: 115px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.banner-div{
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1,h4 {
+    color: #ffffff;
+    text-shadow : 5px 5px 25px #b60000;
+}
+
+.banner-text {
+    color: #ffffff;
+    text-shadow : 5px 5px 25px #b60000;
+    font-size: 20px;
+}
+
+.lower-banner-header{
+    color: #120202;
+    font-size:18px;
+    font-weight: bold;
+}
+
+.lower-banner-text{
+    font-size:12px;
+}
+.button:hover{
+    color:  #d5d5d5;
+}
+
+#signup {
+    background-color: white;
+    color: black;
+}
+

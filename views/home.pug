@@ -1,0 +1,22 @@
+extends layout.pug
+
+include includes/auth-input.pug
+
+append head
+  link(rel="stylesheet" href="public/css/home.css" type="text/css")
+//-   script(src='/public/js/home.js' type='module' defer)
+block content
+    .top-banner-container
+        h1 Everyone is a stranger...
+        p.banner-text until they're not!!!
+        a.button(href='/events') Check Out An Event!
+    .lower-banner-container
+        .banner-div
+            p.lower-banner-header Show up for a virtual gathering
+            p.lower-banner-text You and a few others will join a host in a themed event.
+        .banner-div
+            p.lower-banner-header Have a real conversation
+            p.lower-banner-text Meet people from all over the world.
+        .banner-div
+            p.lower-banner-header See what happens
+            p.lower-banner-text Strangers today, stalkers tomorrow.

@@ -1,32 +1,73 @@
  * {
-     margin: 0;
-     padding: 0;
+    font-family: "Helvetica";
+    margin: 0;
+    padding: 0;
  }
     
-     
-
+a:hover{
+    color:  #d5d5d5;
+}    
 
 .nav-bar {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 18px;
+    height: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
     display: flex; 
     flex-direction: row;
-    justify-content: space-around;
-    background-color: #3D1308;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+}
+.logo-div{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-/* .home-link-logo{
+.homelink{
+    padding-left: 15px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Atma';
     padding-right: 150px;
 }
 
 .nav-links{
     padding-left: 150px;
-} */
+}
 
 .navlink{
     color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-variant-caps: all-small-caps;
     font-weight: bold;
-    padding-left: 5px;
-    padding-right: 5px;
+    font-size: 14px;
+}
+
+.flavicon {
+    width: 20px;
+    height: 20px;
+}
+
+#extrapad {
+    padding-right: 20px
+}
+
+#signup, #signout {
+    background-color: white;
+    color: black;
+    padding:7px 15px;
+    border-radius: 3px;
+}
+
+#signup:hover,
+#signout:hover
+{
+    background-color: #444444;
+    border: 2px solid white;
+    
+    color: white;
 }

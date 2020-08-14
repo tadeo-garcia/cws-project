@@ -1,0 +1,32 @@
+extends layout.pug
+
+append head
+  //- script(src="/api/eventId.js" type="module" defer)
+  //- link(rel="stylesheet" href="public/css/layout.css" type="text/css")
+  link(rel="stylesheet" href="public/css/eventJoin.css" type="text/css")
+
+block content
+  .joinEvent-container
+    .columnOne
+      .joinEventInfo
+        .joinEventInfo-heading
+          //- h2 JOIN #{host.name} FOR TEA  TIME
+          h2 JOIN insert name here FOR TEA  TIME
+        hr
+        .joinEventInfo-info
+          //- p= event.date
+          //- p #{event.time}
+          //- p event date
+          //- p event time
+          p Online Zoom
+          h5 #{url}
+          p Send to a friend that should  be here (especially if you can't   be here yourself!)
+          hr
+          h2  #{capacity} SEAT LEFT!
+        .joinEvent-capacity
+
+      .joinEventForm
+      .teaTimeAbout
+    .columnTwo
+      .meetTheHost
+      .hostBio

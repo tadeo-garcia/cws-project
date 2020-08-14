@@ -5,12 +5,18 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0" )
     link(rel="icon" href="/public/cwsfavicon.png" type="image/png")
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
-    link(rel="stylesheet" href="public/css/layout.css" type="text/css")
+    //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+    link(rel="stylesheet" href="/public/css/layout.css" type="text/css")
+    link(rel="stylesheet" href="/public/css/footer.css" type="text/css")
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Atma' type='text/css')
+
+
+    script(src='/public/js/demouser.js' type='module' defer)
     //- link(rel="icon" href="/public/Sketch86151351.png" type="image/png")
     //- link(rel="icon" type="image/png" href="https://example.com/favicon.png")
     title Covid With Strangers
   body
+    //- img.flavicon(src="cwsfavicon2.jpg", alt="cws" width='10px' height='10px')
   header
     div.nav-bar
       div
@@ -18,9 +24,9 @@ html(lang="en")
         a.navlink(href='/') Covid With Strangers
       div.nav-links
         a.navlink(href='/events') Events
-        a.navlink(href='/') Hosting
-        a.navlink(href='/login') Log In
-        a.navlink(href='/signup') Sign Up
+        a.navlink(href='/hosting') Hosting
+        a.navlink#extrapad(href='/login') Log In
+        a.navlink#signup(href='/signup') Sign Up
 
 
     block content
@@ -30,3 +36,16 @@ html(lang="en")
     //-   script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js"   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE +IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     //-   script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/ popper.min.js" integrity="sha384-9/  reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"   crossorigin="anonymous")
     //-   script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/  bootstrap.min.js"   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/  KUEfYiJOMMV+rV" crossorigin="anonymous")
+  footer
+    .footer-container
+      .side-link-container
+        a.navlink(href='/events') Events
+        a.navlink(href='/hosting') Hosting
+        a.navlink(href='/Facebook') Facebook
+        a.navlink(href='/Twitter') Twitter
+        br
+        a.navlink(href='/Facebook') Terms of Service
+        a.navlink(href='/Twitter') Privacy Policy
+      .description-container
+        p Covid With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way.
+        p We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.

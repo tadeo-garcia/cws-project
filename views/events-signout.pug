@@ -1,0 +1,17 @@
+extends layout-signout.pug
+
+append head
+  script(src="/public/js/events.js" type="module" defer)
+  link(rel="stylesheet" href="public/css/events.css" type="text/css")
+
+block content
+  .main-container
+    .banner-container
+      p.banner-heading Good Conversations
+      p.banner-text They're hard to find.
+    .text-container
+      p.description-heading Covid With Stranger is making friends, from strangers.
+      p.description-text For two hours, five to ten strangers sit at home with a host to talk! The host picks the theme but feel free to talk about anything! The circumstances are unusual, but thats the point.
+      p.description-text If none of these work for you, you can #[a(href='/signup') sign up] and we'll email you when next month's events are happening! You can also #[a(href='/host') host your own event]!
+  .events
+      
