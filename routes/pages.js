@@ -51,11 +51,13 @@ router.get('/signup', csrfProtection, (req, res) => {
 
 
 router.get('/hosting', csrfProtection, async (req, res) => {
+  const types = await EventType.findAll();
   if (!req.user) {
     res.render('login-first')
     return;
   }
-  res.render('hosting');
+
+  res.render('hosting', { types });
 })
 
 router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
