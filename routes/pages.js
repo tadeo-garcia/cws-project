@@ -58,7 +58,7 @@ router.get('/hosting', csrfProtection, async (req, res) => {
   res.render('hosting');
 })
 
-router.get('/hosted', csrfProtection, async (req, res) => {
+router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
   const userId = req.user.id
   const user = await User.findByPk(userId, {
     include: [
@@ -128,7 +128,7 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
   res.render('dashboard', { user, events })
 })
 
-router.get('/account', csrfProtection, async (req, res) => {
+router.get('/dashboard/account', csrfProtection, async (req, res) => {
   const idUser = req.user.id
   const user = await User.findByPk(idUser, {
     include: [

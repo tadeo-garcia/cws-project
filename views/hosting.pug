@@ -15,9 +15,11 @@ block content
         input.form-input(type="hidden" name="_csrf" value=csrfToken)
         input.form-input(type="text" name='event' required placeholder='    Event Name')
         input.form-input(type="textarea" name='description' required placeholder='   Brief description of the event')
+        input.form-input(type="date" name='date' required placeholder='    Select your date')
+        input.form-input(type="time" name='time' required placeholder='    Select your time')
         input.form-input(type="select" name='eventType' required placeholder='    Select your event type')
         input.form-input(type="select" name='capacity' required placeholder='    How big do you want your meeting?')
-            //- option(value=1) 1
+            //- option(value=1)
             //- option(value=2) 2
             //- option(value=3) 3
             //- option(value=4) 4
