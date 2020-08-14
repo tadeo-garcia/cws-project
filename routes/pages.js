@@ -52,11 +52,8 @@ router.get('/hosting', csrfProtection, async (req, res) => {
 })
 
 router.get('/dashboard', csrfProtection, async (req, res) => {
-  if (!req.user) {
-    res.redirect('/login')
-    return;
-  }
-  res.render('/dashboard')
+  
+  res.render('dashboard')
 })
 
 router.get('/', csrfProtection, (req, res) => {
