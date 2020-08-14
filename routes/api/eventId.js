@@ -9,13 +9,13 @@ db = require("../../db/models");
 const { Event, User, EventType, UserEvent } = db;
 
 router.get('/event/:id', handleValidationErrors, routeHandler(async (req, res, next) => {
-    console.log(req.params.id)
+    
     const eventId = 1 // req.params.id
     const event = await Event.findByPk({
         eventId,
         include: [
-            { model: User, as: 'host' },
-            { model: EventType }
+            User,
+            EventType
         ]
     })
 
