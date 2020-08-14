@@ -26,7 +26,7 @@ router.get('/events/:id', csrfProtection, async (req,res)=>{
       //     { model: User, as: 'host' },
       //     { model: EventType }
       // ]
-  })
+  // })
 
   // res.json({ event })
   res.render('eventJoin');
@@ -70,7 +70,7 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
     res.redirect('/login')
     return;
   }
-  res.render('/dashboard')
+  res.render('dashboard')
 })
 
 router.get('/', csrfProtection, (req, res) => {
