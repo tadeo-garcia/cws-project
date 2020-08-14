@@ -30,7 +30,6 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
   })
 
   const userid = req.user.id;
-
   console.log(req.user.UserEvent)
 
   if (!req.user) { res.render('join-event', { event: event[0], csrfToken: req.csrfToken() }); }
