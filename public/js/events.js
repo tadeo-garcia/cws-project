@@ -6,7 +6,8 @@ const getEvents = async () => {
 
 const createEventLi = (event) => {
   const date = new Date(event.date)
-  return `<div class="card-event">
+  return `
+  <div class="card-event">
     <img src=${event.EventType.eventCard} />
     <div class="card-event-info">
       <div class="card-left-div">
