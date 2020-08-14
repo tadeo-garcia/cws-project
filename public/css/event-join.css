@@ -7,8 +7,7 @@
 
 .banner-container{
     background-size: cover;
-    background-image: url('/public/pics/home/events-banner.jpg');
-    height: 200px;
+    height: 300px;
     width:100%;
     display: flex;
     /* flex-direction: column; */
@@ -17,26 +16,34 @@
     font-variant-caps: all-small-caps;
     color: white;
     font-weight: bold;
+    overflow: hidden
 
+}
+
+.banner{
+    width: 100%;
+    position: relative;
+    bottom: 25px;
+    
 }
 
 .banner-heading{
   font-size: 34px;
   padding-top: 25px;
+  position:relative;
   
 }
 
 .banner-text{
   font-size: 18px;
   padding-bottom: 25px;
+  position: relative;
 }
 
 .text-container{
   padding-top: 40px;
+  padding-bottom: 25px;
   width: 550px;
-}
-.link {
-  color: black;
 }
 
 .description-heading{
@@ -120,21 +127,26 @@
 }  
 
 .button-div{
-  padding: 10px 0px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   display:flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.button {
-  width: 200px;
-  height: 30px;
+.join-button{
+  padding: 15px 45px;
   border-radius: 5px;
   background:gray;
   color: black;
-  transition: background 1s ease;
   font-variant-caps: all-small-caps;
-  font-size:18px;
+  font-size:30px;
+}
+
+.button-div {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }  
 
 button:hover {
@@ -152,4 +164,4 @@ button:hover {
   background-color: #F7BF4D;
   position: relative;
   overflow: hidden;
-} */
+} */ 

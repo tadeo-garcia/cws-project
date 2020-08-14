@@ -9,17 +9,17 @@ db = require("../../db/models");
 const { Event, User, EventType, UserEvent } = db;
 
 router.get('/event/:id', handleValidationErrors, routeHandler(async (req, res, next) => {
-    
-    const eventId = 1 // req.params.id
-    const event = await Event.findByPk({
-        eventId,
-        include: [
-            User,
-            EventType
-        ]
-    })
 
-    res.json({ event })
+  const eventId = req.params.id
+  const event = await Event.findByPk({
+    eventId,
+    include: [
+      User,
+      EventType
+    ]
+  })
+
+  res.json({ event })
 }))
 
 
@@ -31,16 +31,16 @@ router.post('/userEvent',
     // console.log(req.body)
     // console.log(token)
     const user = await getUserFromToken(token);
-    
+
     console.log('~~~~~~')
     console.log(eventId)
     //   console.log(eventId)
 
     const userEvent = await UserEvent.create({
-        eventId,
-        userId : user.id
-      });
-res.json({ id: userEvent, user: user })
+      eventId,
+      userId: user.id
+    });
+    res.json({ id: userEvent, user: user })
   }));
 
 module.exports = router
