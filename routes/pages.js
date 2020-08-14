@@ -32,7 +32,7 @@ router.get('/events/:id', csrfProtection, async (req,res)=>{
 })
 
 router.get('/login', csrfProtection, (req, res) => {
-  
+
   res.render('login', { csrfToken: req.csrfToken() });
 });
 
@@ -52,15 +52,15 @@ router.get('/hosting', csrfProtection, async (req, res) => {
 })
 
 router.get('/dashboard', csrfProtection, async (req, res) => {
-  
+
   res.render('dashboard')
 })
 
 router.get('/', csrfProtection, (req, res) => {
-  if (req.user) {
-    res.redirect('/dashboard');
-    return;
-  }
+  // if (req.user) {
+  //   res.redirect('/dashboard');
+  //   return;
+  // }
   res.render('home')
 })
 

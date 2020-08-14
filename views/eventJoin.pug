@@ -1,7 +1,7 @@
 extends layout.pug
 
 append head
-  link(rel="stylesheet" href="/public/css/eventJoin.css" type="text/css")
+  link(rel="stylesheet" href="/public/css/eventJoin3.css" type="text/css")
 
 block content
   .joinEvent-container
@@ -17,12 +17,17 @@ block content
           h5 #{url}
           p Send to a friend that should  be here (especially if you can't   be here yourself!)
           hr
-          h2  #{event.capacity} SEAT LEFT!
+          h2  #{event.capacity} SEATS LEFT!
         .joinEvent-capacity
-          .progress-bar
+          .progressBar
             .bar(style='width:83.3333334%')
-              .barDiv
-            //- each user in event.User
+              - var n = 0;
+                while n < event.capacity
+                if
+                  p.progressBar-count= n++
+                  .barDiv
+
+
       .joinEventForm
       .teaTimeAbout
     .columnTwo
