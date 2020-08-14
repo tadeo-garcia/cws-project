@@ -7,4 +7,4 @@ const joinButton = document.querySelector('.button')
         body: JSON.stringify({eventId: id[0]})
     })
  }
-joinButton.innerHTML = `<a href='/dashboard' class='join-button' onclick="myFunction()">Join Event</a>`
+joinButton.innerHTML = `<a href='/dashboard'class='join-button' onclick="myFunction()">Join Event</a>`

@@ -28,7 +28,12 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
       { model: EventType }
     ]
   })
-  if (!req.user) { res.render('join-event', { event: event[0], csrfToken: req.csrfToken() });}
+
+  const userid = req.user.id;
+
+  console.log(req.user.UserEvent)
+
+  if (!req.user) { res.render('join-event', { event: event[0], csrfToken: req.csrfToken() }); }
 
   res.render('single-event', { event: event[0], csrfToken: req.csrfToken() });
 })
@@ -91,19 +96,17 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
   const idUser = req.user.id
 
   const userEvents = await UserEvent.findAll({
-    where:{
+    where: {
       userId: idUser
     }
   })
 
-  
   const user = await User.findByPk(idUser, {
     include: [
       { model: Event }
     ]
   })
 
-  
   const eventIds = []
   userEvents.forEach(userEvent => {
     eventIds.push(userEvent.dataValues.eventId)
@@ -122,14 +125,18 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
       { model: EventType }
     ]
   })
-
-
-
   res.render('dashboard', { user, events })
 })
 
-
-
+router.get('/account', csrfProtection, async (req, res) => {
+  const idUser = req.user.id
+  const user = await User.findByPk(idUser, {
+    include: [
+      { model: Event }
+    ]
+  })
+  res.render('edit-account', { user });
+})
 
 
 
