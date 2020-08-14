@@ -5,9 +5,8 @@
   align-items: center;
 }
 
-.banner-container{
-    background-size: cover;
-    background-image: url('/public/pics/home/events-banner.jpg');
+.dashboard-nav{
+    background-color: gray;
     height: 50px;
     width:100%;
     display: flex;
@@ -20,33 +19,63 @@
 
 }
 
-.banner-heading{
-  font-size: 34px;
-  padding-top: 25px;
-  
+.dashboard-container{
+    width: 800px;
+    height: 700px;
+    display:grid;
+    grid-template-columns: 200px 4fr;
+    grid-template-areas: 'welcome-div events-div';
 }
 
-.banner-text{
-  font-size: 18px;
-  padding-bottom: 25px;
-}
+.welcome-div{
+    display:flex;
+    flex-direction: column;
 
-.text-container{
-  padding-top: 40px;
-  width: 550px;
+    /* border: 3px solid black; */
 }
 
 .description-heading{
-  font-size:20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size:18px;
   font-weight: bold;
   padding-bottom: 15px;
 }
 
 .description-text{
-  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size:16px;
+  font-weight: bold;
 }
 
+.button-bar {
+	font-weight: bold;
+	text-align: center;
+	margin: 5px;
+	background-color: #210303;
+	color: white;
+	padding: 15px 15px;
+	border-radius: 8px;
+	font-variant-caps: all-small-caps;
+}
+.button-bar:hover{
+    color:  #d5d5d5;
+}
+
+.events-div{
+  /* border: 3px solid black; */
+  display: flex;
+  flex-direction: column;
+}
+.attending-div{
+  height:50px;
+/* border: 3px solid black; */
+}
+.events-container{
+/* border: 3px solid black; */
+}
 .events{
   width: 1000px;
   padding: 25px 0px;
@@ -124,6 +153,7 @@
 }
 
 .button {
+  text-align: center;
   width: 200px;
   height: 30px;
   border-radius: 5px;

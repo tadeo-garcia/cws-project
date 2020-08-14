@@ -4,7 +4,8 @@ const router = express.Router();
 const app = express();
 const csrfProtection = require("csurf")({ cookie: true })
 db = require('../db/models');
-const { Event, User, EventType } = db;
+const { Event, User, EventType, UserEvent } = db;
+const { Op } = require('sequelize');
 
 
 app.use(express.json());
@@ -17,22 +18,22 @@ router.get('/events', csrfProtection, async (req, res) => {
   res.render('events');
 })
 
-router.get('/events/:id', csrfProtection, async (req,res)=>{
+router.get('/events/:id', csrfProtection, async (req, res) => {
   const eventId = req.params.id
   console.log(eventId);
   const event = await Event.findAll({
-    where: {id: eventId},
-      include: [
-          { model: User, as: 'host' },
-          { model: EventType }
-      ]
-    })
+    where: { id: eventId },
+    include: [
+      { model: User, as: 'host' },
+      { model: EventType }
+    ]
+  })
 
-  res.render('eventJoin', {event: event[0], csrfToken: req.csrfToken() });
+  res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken() });
 })
 
 router.get('/login', csrfProtection, (req, res) => {
-  
+
   res.render('login', { csrfToken: req.csrfToken() });
 });
 
@@ -52,8 +53,36 @@ router.get('/hosting', csrfProtection, async (req, res) => {
 })
 
 router.get('/dashboard', csrfProtection, async (req, res) => {
-  
-  res.render('dashboard')
+  const userId = req.user.id
+  const user = await User.findByPk(userId, {
+    include: [
+      { model: Event }
+    ]
+  })
+
+  const userEvents = user.Events
+  const eventIds = []
+  userEvents.forEach(event => {
+    eventIds.push(event.id)
+  })
+
+  console.log(eventIds)
+
+  const events = await Event.findAll({
+    where: {
+      id: {
+        [Op.in]: eventIds
+      }
+    },
+    include: [
+      { model: User, as: 'host' },
+      { model: EventType }
+    ]
+  })
+
+
+
+  res.render('dashboard', { user, events })
 })
 
 router.get('/', csrfProtection, (req, res) => {

@@ -7,9 +7,6 @@ const signOut = () => {
         })
     })
 
-    // if(res.ok){
-    //     windo.location.href = "/login";
-    // }
 }
 
 signOut();
