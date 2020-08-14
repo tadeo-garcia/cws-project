@@ -1,35 +1,33 @@
 extends layout.pug
 
 append head
-  script(src="/public/js/eventid.js" type="module" defer)
   link(rel="stylesheet" href="/public/css/eventJoin.css" type="text/css")
 
 block content
-  .joinEvent-container
-  button.button
-    .columnOne
-      .joinEventInfo
-        .joinEventInfo-heading
-          h2 JOIN #{event.host.fullName} FOR COVID WITH STALKERS
-        hr
-        .joinEventInfo-info
-          p #{event.date}
-          p #{event.time}
-          p Online Zoom
-          h5 #{url}
-          p Send to a friend that should  be here (especially if you can't   be here yourself!)
+    .joinEvent-container
+      .columnOne
+        .joinEventInfo
+          .joinEventInfo-heading
+            h2 JOIN #{event.host.fullName} FOR COVID WITH STALKERS
           hr
-          h2  #{event.capacity} SEAT LEFT!
-        .joinEvent-capacity
-          .progress-bar
-            .bar(style='width:83.3333334%')
-              .barDiv
-            //- each user in event.User
-    //-   .joinEventForm
-    //-   .teaTimeAbout
-    //- .columnTwo
-    //-   .meetTheHost
-    //-   .hostBio
+          .joinEventInfo-info
+            p #{event.date}
+            p #{event.time}
+            p Online Zoom
+            h5 #{url}
+            p Send to a friend that should  be here (especially if you can't   be here yourself!)
+            hr
+            h2  #{event.capacity} SEAT LEFT!
+          .joinEvent-capacity
+            .progress-bar
+              .bar(style='width:83.3333334%')
+                .barDiv
+              //- each user in eveventsent.User
+      //-   .joinEventForm
+      //-   .teaTimeAbout
+      //- .columnTwo
+      //-   .meetTheHost
+      //-   .hostBio
 
 
 //- ${event.EventType.eventDescription}
