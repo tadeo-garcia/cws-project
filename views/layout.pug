@@ -5,10 +5,12 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0" )
     link(rel="icon" href="/public/cwsfavicon.png" type="image/png")
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
-    link(rel="stylesheet" href="public/css/layout.css" type="text/css")
-    link(rel="stylesheet" href="public/css/footer.css" type="text/css")
+    //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+    link(rel="stylesheet" href="/public/css/layout.css" type="text/css")
+    link(rel="stylesheet" href="/public/css/footer.css" type="text/css")
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Atma' type='text/css')
+    
+
     script(src='/public/js/demouser.js' type='module' defer)
     //- link(rel="icon" href="/public/Sketch86151351.png" type="image/png")
     //- link(rel="icon" type="image/png" href="https://example.com/favicon.png")
@@ -17,13 +19,12 @@ html(lang="en")
     //- img.flavicon(src="cwsfavicon2.jpg", alt="cws" width='10px' height='10px')
   header
     div.nav-bar
-      div
+      div.logo-div
         img(src="/public/white_mask.png", alt="cws" width='35' height='35')
         a.homelink(href='/') Covid With Strangers
       div.nav-links
         a.navlink(href='/events') Events
         a.navlink(href='/hosting') Hosting
-        a.navlink#demouser(href='/events') Demo User
         a.navlink#extrapad(href='/login') Log In
         a.navlink#signup(href='/signup') Sign Up
 

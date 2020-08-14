@@ -1,4 +1,5 @@
  * {
+    font-family: "Helvetica";
     margin: 0;
     padding: 0;
  }
@@ -8,9 +9,9 @@ a:hover{
 }    
 
 .nav-bar {
-    height: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 12px;
     display: flex; 
     flex-direction: row;
@@ -18,9 +19,15 @@ a:hover{
     justify-content: center;
     background-color: #444;
 }
+.logo-div{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .homelink{
     padding-left: 15px;
+    padding-bottom: 5px;
     color: white;
     font-size: 16px;
     font-family: 'Atma';
@@ -37,7 +44,7 @@ a:hover{
     padding-right: 10px;
     font-variant-caps: all-small-caps;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .flavicon {
