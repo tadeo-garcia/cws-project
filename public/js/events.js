@@ -4,15 +4,30 @@ const getEvents = async () => {
   return data;
 };
 
+const editDate = (date) => {
+  let date1 = new Date(date); 
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"
+];
+
+const month = (monthNames[date1.getMonth()]);
+const year = date1.getFullYear()
+const day = date1.getDay()
+return month + ' ' + day + ', ' + year
+;
+}
+
 const createEventLi = (event) => {
-  const date = new Date(event.date)
+  const prettyDate = editDate(event.date)
   return `
   <div class="card-event">
     <img src=${event.EventType.eventCard} />
     <div class="card-event-info">
       <div class="card-left-div">
-        <h2>${event.EventType.type}</h2>
-        <p>${event.EventType.eventDescription}</p>
+      <h2>${event.EventType.type}</h2>
+      <p>Date: ${prettyDate}</p>
+      <p>Time: ${event.time}</p>
+      <p>${event.EventType.eventDescription}</p>
       </div>
       <h2 class="card-event-profile">Host: ${event.host.fullName}</h2>
       <img src=${event.host.avatar} class="card-event-host avatar-bordered" />
@@ -33,6 +48,17 @@ const populateEventsList = async () => {
     const eventLi = createEventLi(event)
     eventsContainer.innerHTML += eventLi
   }
-}
 
-populateEventsList();
+  const cancelButton = document.getElementById("delete");
+
+  async function cancelEvent(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const res = await fetch("/api/events/" + cancelButton.dataset.id, {
+      method: "DELETE",
+    });
+  }
+  cancelButton.addEventListener("click", cancelEvent);
+  
+}
+  populateEventsList();

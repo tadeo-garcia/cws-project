@@ -1,17 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const {environment} = require('../../config')
 const eventsIdRouter = require('./eventId')
 const usersRouter = require('./users');
 const eventsRouter = require('./events')
+const dashboardRouter = require('./dashboard')
+
+const { environment } = require('../../config')
 const { ValidationError } = require("sequelize");
 
 router.use('/users', usersRouter);
 router.use('/events', eventsRouter);
-router.use('/eventId', eventsIdRouter)
+router.use('/eventId', eventsIdRouter);
+router.use('/dashboard', dashboardRouter);
 
 router.use((err, req, res, next) => {
-    if(err instanceof ValidationError) {
+    if (err instanceof ValidationError) {
         err.errors = err.errors.map(e => e.message);
     }
     next(err)
@@ -29,8 +32,8 @@ router.use((err, req, res, next) => {
     })
 });
 
-router.use('*', (req, res)=>{
-    res.status(404).json({message: 'route does not exist'})
+router.use('*', (req, res) => {
+    res.status(404).json({ message: 'route does not exist' })
 })
 
 module.exports = router

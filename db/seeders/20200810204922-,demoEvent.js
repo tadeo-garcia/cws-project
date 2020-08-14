@@ -6,7 +6,8 @@ module.exports = {
 up: (queryInterface, Sequelize) => {
 return queryInterface.bulkInsert('Events', [{
 eventTypeId: 3,
-date: new Date(),
+date: new Date('December 17, 2020'),
+// date: new Date(2020, 11, 22),
 time: '08:00PM EST',
 userId: 3,
 hostId: 1,
@@ -15,7 +16,8 @@ description: "A milkshake, or simply shake, is a drink that is usually made by b
 },
 {
 eventTypeId: 2,
-date: new Date(),
+date: new Date('August 25, 2020'),
+// date: new Date(2020, 08, 22),
 time: '09:00PM EST',
 userId: 2,
 hostId: 3,
@@ -23,7 +25,8 @@ capacity: 10,
 description: "Green tea is a type of tea that is made from Camellia sinensis leaves and buds that have not undergone the same withering and oxidation process used to make oolong teas and black teas. ... Green tea originated in China, but its production and manufacture has spread to other countries in East Asia."
 },{
 eventTypeId: 4,
-date: new Date(),
+date: new Date('September 17, 2020'),
+// date: new Date(2020, 08, 28),
 time: '08:00PM EST',
 userId: 2,
 hostId: 1,
@@ -32,7 +35,7 @@ description: "Petting your cat or dog feels good. It can lower your blood pressu
 },
 {
 eventTypeId: 1,
-date: new Date(),
+date: new Date('October 5, 2020'),
 time: '03:00PM EST',
 userId: null,
 hostId: 3,
@@ -40,7 +43,7 @@ capacity: 10,
 description: 'Let one of our experienced instructors show you the joy of painting while unlocking your own inner-creative nature, in this festive communal sip and paint'
 },{
 eventTypeId: 5,
-date: new Date(),
+date: new Date('November 25, 2020'),
 time: '08:00PM EST',
 userId: 3,
 hostId: 2,
