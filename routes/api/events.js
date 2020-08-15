@@ -19,4 +19,7 @@ router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => {
     res.json({ events })
 }))
 
+
+
+
 module.exports = router

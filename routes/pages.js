@@ -4,8 +4,9 @@ const router = express.Router();
 const app = express();
 const csrfProtection = require("csurf")({ cookie: true })
 db = require('../db/models');
-const { Event, User, EventType } = db;
-
+const { Event, User, EventType, UserEvent } = db;
+const { Op } = require('sequelize');
+const { pool } = require('pg');
 
 app.use(express.json());
 // app.use('view engine', 'pug');
@@ -17,18 +18,30 @@ router.get('/events', csrfProtection, async (req, res) => {
   res.render('events');
 })
 
-router.get('/events/:id', csrfProtection, async (req,res)=>{
+router.get('/events/:id', csrfProtection, async (req, res) => {
   const eventId = req.params.id
   console.log(eventId);
   const event = await Event.findAll({
-    where: {id: eventId},
-      include: [
-          { model: User, as: 'host' },
-          { model: EventType }
-      ]
-    })
+    where: { id: eventId },
+    include: [
+      { model: User, as: 'host' },
+      { model: EventType }
+    ]
+  })
+    // console.log('EVENTS', event)
 
-  res.render('eventJoin', {event: event[0], csrfToken: req.csrfToken() });
+    const users = await User.findAll({ // SELECT * FROM USER
+      include: [Event], //
+      through: {where: { eventId: eventId }},
+    });
+    console.log('USERS', users);
+  // const userid = req.user.id;
+
+  // console.log(req.user.UserEvent)
+
+  if (!req.user) { res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken(), users }); }
+
+  res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken(), users });
 })
 
 router.get('/login', csrfProtection, (req, res) => {
@@ -51,10 +64,87 @@ router.get('/hosting', csrfProtection, async (req, res) => {
   res.render('hosting');
 })
 
-router.get('/dashboard', csrfProtection, async (req, res) => {
+router.get('/hosted', csrfProtection, async (req, res) => {
+  const userId = req.user.id
+  const user = await User.findByPk(userId, {
+    include: [
+      { model: Event }
+    ]
+  })
 
-  res.render('dashboard')
+  const userEvents = user.Events
+  const eventIds = []
+  userEvents.forEach(event => {
+    eventIds.push(event.id)
+  })
+
+  // console.log(eventIds)
+
+  const events = await Event.findAll({
+    where: {
+      id: {
+        [Op.in]: eventIds
+      }
+    },
+    include: [
+      { model: User, as: 'host' },
+      { model: EventType }
+    ]
+  })
+
+
+
+  res.render('dashboard-host', { user, events })
 })
+
+
+router.get('/dashboard', csrfProtection, async (req, res) => {
+  const idUser = req.user.id
+
+  const userEvents = await UserEvent.findAll({
+    where: {
+      userId: idUser
+    }
+  })
+
+  const user = await User.findByPk(idUser, {
+    include: [
+      { model: Event }
+    ]
+  })
+
+  const eventIds = []
+  userEvents.forEach(userEvent => {
+    eventIds.push(userEvent.dataValues.eventId)
+  })
+
+  console.log(eventIds)
+
+  const events = await Event.findAll({
+    where: {
+      id: {
+        [Op.in]: eventIds
+      }
+    },
+    include: [
+      { model: User, as: 'host' },
+      { model: EventType }
+    ]
+  })
+  res.render('dashboard', { user, events })
+})
+
+router.get('/account', csrfProtection, async (req, res) => {
+  const idUser = req.user.id
+  const user = await User.findByPk(idUser, {
+    include: [
+      { model: Event }
+    ]
+  })
+  res.render('edit-account', { user });
+})
+
+
 
 router.get('/', csrfProtection, (req, res) => {
   // if (req.user) {

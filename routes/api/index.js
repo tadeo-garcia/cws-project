@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const {environment} = require('../../config')
-
+const eventsIdRouter = require('./eventId')
 const usersRouter = require('./users');
 const eventsRouter = require('./events')
 const { ValidationError } = require("sequelize");
 
 router.use('/users', usersRouter);
 router.use('/events', eventsRouter);
+router.use('/eventId', eventsIdRouter)
 
 router.use((err, req, res, next) => {
     if(err instanceof ValidationError) {

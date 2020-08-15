@@ -1,4 +1,7 @@
 'use strict';
+
+// const { INTEGER } = require("sequelize/types");
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {

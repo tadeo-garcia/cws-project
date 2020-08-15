@@ -10,21 +10,46 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.progress-bar {
-  display:flex;
-  justify-content: center;
+.attendees-count, .capacityBar-count {
+  display: none;
 }
 
 .bar {
   display: flex;
-  background-color: lawngreen;
+  justify-content: space-between;
+  /* background-color: lawngreen; */
+  /* grid-template-columns: repeat(1fr, 1); */
+  /* grid-template-rows: repeat(1fr, 10); */
   height: 24px;
+  margin: 5px auto;
 }
 
-.barDiv {
-  background-color: lightblue;
-  width: 24px;
-  height: 24px;
+
+/* always one attendee - the host */
+.hostAttending {
+  border-radius: 10px 0 0 10px;
+  background-color: darkred;
+}
+
+.capacityBar {
+  background-color: #aaa;
+}
+
+.atCapacity, .attendees,
+.hostAttending, .capacityBar,
+.endCapacityBarVacancy {
+    height: 20px;
+    width: 100%;
+    margin: 0 2px;
+}
+
+.attendees, .atCapacity {
+  background-color: darkred;
+}
+
+.endCapacityBarVacancy, .atCapacity {
+  border-radius: 0px 10px 10px 0px;
+  background-color: #aaa;
 }
 
 /* .joinEventInfo

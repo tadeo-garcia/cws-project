@@ -33,14 +33,14 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.TEXT,
     interests: DataTypes.TEXT,
   }, {});
-  // Doesn't work in the users.js route but can maybe try later . . . . . 
+  // Doesn't work in the users.js route but can maybe try later . . . . .
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString())
   }
 // Host ID?  hasMany or belongstomany??
   User.associate = function (models) {
     User.belongsToMany(models.Event, {
-      foreignKey: 'userId',
+      foreignKey: ' userId',
       through: 'UserEvents',
       otherKey: 'eventId'
     }),
