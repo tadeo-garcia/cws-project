@@ -46,7 +46,7 @@ router.get('/signup', csrfProtection, (req, res) => {
 });
 
 
-router.get('/events/hosting', csrfProtection, async (req, res) => {
+router.get('/dashboard/hosting', csrfProtection, async (req, res) => {
   const types = await EventType.findAll();
 
   if (!req.user) {
@@ -70,8 +70,6 @@ router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
     eventIds.push(event.id)
   })
 
-  // console.log(eventIds)
-
   const events = await Event.findAll({
     where: {
       id: {
@@ -84,13 +82,17 @@ router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
     ]
   })
 
-
-
   res.render('dashboard-host', { user, events })
 })
 
 
 router.get('/dashboard', csrfProtection, async (req, res) => {
+  if (!req.user) {
+    res.render('login-first')
+    return;
+  }
+
+  
   const idUser = req.user.id
 
   const userEvents = await UserEvent.findAll({
@@ -124,6 +126,7 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
     ]
   })
 
+  
   res.render('dashboard', { user, events })
 })
 
@@ -137,8 +140,6 @@ router.get('/dashboard/account', csrfProtection, async (req, res) => {
   })
   res.render('edit-account', { user });
 })
-
-
 
 router.get('/', csrfProtection, (req, res) => {
   if (req.user) {
