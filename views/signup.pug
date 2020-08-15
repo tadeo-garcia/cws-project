@@ -14,7 +14,7 @@ block content
       p.description-text Millions of strangers across the world have sat together for conversations. Create an account and you'll be on your way to join the community.
       br
     .form-container
-      form#signup-form
+      form#signup-form(action='/' method='POST')
         ul#errors-container
         input.form-input(type="hidden" name="_csrf" value=csrfToken)
         input.form-input(type="text" name='email' required placeholder='    Email Address')

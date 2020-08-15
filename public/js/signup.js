@@ -10,12 +10,10 @@ form.addEventListener('submit', async (e) => {
   const userName = formData.get('userName');
   const password = formData.get('password');
   const password2 = formData.get('password2');
-  const token = formData.get('_csrf')
-// router.post("/guest", csrfProtection, validateGuest, (req, res) => {
-  // REST OF CODE NOT SHOWN
+  const _csrf = formData.get('_csrf')
+  // console.log(token)
 
-
-  const body = { email, userName, password, password2, token };
+  const body = { email, userName, password, password2, _csrf };
   errorsContainer.innerHTML = ''
 
   const res = await fetch('/api/users', {
@@ -43,21 +41,6 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  // console.log(data);
   window.location.href = '/';
 });
 
-
-        // if(typeof errors[0] !== Object) {
-        //   for (let error in errors) {
-        //     console.log(typeof error)
-        //     const errorLi = document.createElement('li');
-        //     // console.log(error)
-        //     if (error === 'Validation isEmail on email failed') {
-        //       error = 'Please enter a valid Email'
-        //     }
-        //     errorLi.innerHTML = error; // error.msg ?
-        //     errorsContainer.appendChild(errorLi);
-        //   }
-        //   return;
-        // } 
