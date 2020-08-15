@@ -2,7 +2,6 @@ const hostingForm = document.querySelector('#host-form');
 console.log(hostingForm);
 
 hostingForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
 
     const eventTypes = {
         'Paint by Wine': 1,
@@ -20,17 +19,13 @@ hostingForm.addEventListener('submit', async (e) => {
     const description = formData.get('description')
 
     const eventTypeId = eventTypes[formData.get('eventType')]
-    
-    // const date = new Date(date)
-    // const password = formData.get('password');
-    // console.log(_csrf);
     const body = { _csrf, date, time, eventTypeId, capacity, description}
-    const res = await fetch('/hostEvent', {
+    const res = await fetch('/api/dashboard/hostEvent', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
             'Content-Type': 'application/json'
         }
     });
-    // window.location.href = '/dashboard/hosted';
+    window.location.href = '/dashboard';
 });

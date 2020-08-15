@@ -6,8 +6,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 
         async function leaveEvent(e) {
-            console.log('~~~')
-            console.log(this.id)
             let eventId = Number(this.id);
             e.preventDefault();
             e.stopPropagation();
