@@ -23,24 +23,18 @@ router.get('/event/:id', handleValidationErrors, routeHandler(async (req, res, n
 }))
 
 
-router.post('/userEvent',
-  routeHandler(async (req, res, next) => {
-    const eventId = Number(req.headers.referer.match(/\d+$/)[0]);
+router.post('/userEvent', async (req, res, next) => {
+    const eventId = req.body.eventId;
+
+    // console.log(res)
+    // const eventId = Number(req.headers.referer.match(/\d+$/)[0]);
     const { token } = req.cookies;
-    // console.log(req.cookies)
-    // console.log(req.body)
-    // console.log(token)
     const user = await getUserFromToken(token);
-
-    console.log('~~~~~~')
-    console.log(eventId)
-    //   console.log(eventId)
-
     const userEvent = await UserEvent.create({
       eventId,
       userId: user.id
     });
     res.json({ id: userEvent, user: user })
-  }));
+  });
 
 module.exports = router
