@@ -1,0 +1,3 @@
+alter table "UserEvents" drop constraint "UserEvents_eventId_fkey";
+
+ALTER TABLE ONLY public."UserEvents" ADD CONSTRAINT "UserEvents_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES public."Events"(id) on delete cascade ;

@@ -9,6 +9,7 @@ db = require("../../db/models");
 const { Event, User, EventType, UserEvent } = db;
 
 router.delete('/hosted/:id', routeHandler(async (req, res) => {
+    console.log('Delete in dashboard', req.params.id)
     const event = await Event.findByPk(req.params.id, {
         // include: [
         //     {
@@ -26,6 +27,7 @@ router.delete('/hosted/:id', routeHandler(async (req, res) => {
     }
 
     await event.destroy();
+    // location.reload()
     res.json({ message: 'success' });
 }));
 
