@@ -1,12 +1,17 @@
 const joinButton = document.querySelector('.join-button')
-
- window.myFunction = () => {
-     let id = window.location.pathname.match(/\d+/)
+const myFunction = (e) => {
+    // e.preventDefault()
+    let id = Number(e.currentTarget.id);
+    //  let id = window.location.pathname.match(/\d+/)
     fetch('/api/eventId/userEvent', {
         method: 'POST',
-        body: JSON.stringify({eventId: id[0]})
+        body: JSON.stringify({eventId: id}),
+        headers: {
+            'Content-Type': 'application/json'
+          }
     })
- }
-joinButton.innerHTML = `<a href='/dashboard'class='join-button' onclick="myFunction()">Join Event</a>`
+}
+// joinButton.innerHTML = `<a href='/dashboard'class='join-button id=' onclick="myFunction(event)">Join Event</a>`
 
+joinButton.addEventListener("click", (e) => myFunction(e))
 
