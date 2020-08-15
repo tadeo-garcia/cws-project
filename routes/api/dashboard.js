@@ -23,7 +23,7 @@ router.post('/hostEvent', routeHandler(async (req, res, next) => {
         capacity,
         description
     })
-
+    res.json({ message: 'success' });
 }))
 
 router.delete('/hosted/:id', routeHandler(async (req, res) => {
