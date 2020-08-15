@@ -29,9 +29,6 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
     ]
   })
 
-  // const userid = req.user.id;
-  // console.log(req.user.UserEvent)
-
   if (!req.user) { res.render('join-event', { event: event[0], csrfToken: req.csrfToken() }); }
 
   res.render('join-event-loggedin', { event: event[0], csrfToken: req.csrfToken() });
@@ -51,11 +48,11 @@ router.get('/signup', csrfProtection, (req, res) => {
 
 router.get('/events/hosting', csrfProtection, async (req, res) => {
   const types = await EventType.findAll();
+
   if (!req.user) {
     res.render('login-first')
     return;
   }
-
   res.render('hosting', { types });
 })
 
@@ -126,8 +123,10 @@ router.get('/dashboard', csrfProtection, async (req, res) => {
       { model: EventType }
     ]
   })
+
   res.render('dashboard', { user, events })
 })
+
 
 router.get('/dashboard/account', csrfProtection, async (req, res) => {
   const idUser = req.user.id
