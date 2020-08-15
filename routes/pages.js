@@ -61,7 +61,7 @@ router.get('/', csrfProtection, (req, res) => {
     res.redirect('/dashboard');
     return;
   }
-  res.render('home')
+// git s  res.render('home')
 })
 
 router.get('*', (req, res) => {
