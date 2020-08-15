@@ -19,7 +19,21 @@ router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => {
     res.json({ events })
 }))
 
-
+// router.post('/', csrfProtection, validateTweet, routeHandler(async (req, res)=> {
+//     const { message } = req.body;
+//     const userId = req.user.id;
+  
+//     const newTweet = await Tweet.create({ message, userId });
+//     const tweet = await Tweet.findByPk(newTweet.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//       ]
+//     });
+//     res.json({ tweet });
+//   }));
 
 
 

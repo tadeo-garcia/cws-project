@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       foriegnKey: 'eventId',
       through: 'UserEvents',
       otherKey: 'userId',
+      onDelete: 'cascade'
     }),
     Event.belongsTo(models.User, {
       foreignKey: 'hostId',

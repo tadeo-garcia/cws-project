@@ -49,16 +49,7 @@ const populateEventsList = async () => {
     eventsContainer.innerHTML += eventLi
   }
 
-  const cancelButton = document.getElementById("delete");
 
-  async function cancelEvent(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const res = await fetch("/api/events/" + cancelButton.dataset.id, {
-      method: "DELETE",
-    });
-  }
-  cancelButton.addEventListener("click", cancelEvent);
-  
 }
-  populateEventsList();
+
+populateEventsList();

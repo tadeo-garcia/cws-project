@@ -9,5 +9,4 @@ const joinButton = document.querySelector('.join-button')
  }
 joinButton.innerHTML = `<a href='/dashboard'class='join-button' onclick="myFunction()">Join Event</a>`
 
-const cancelButton = document.getElementById("delete");
 
