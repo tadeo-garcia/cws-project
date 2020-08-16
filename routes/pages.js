@@ -33,7 +33,8 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
     include: [ User, EventType ],
     through: UserEvent,
   })
-    console.log('EVENTS', event.hostId.fullName)
+    // console.log('EVENTS', event.hostId.fullName)
+    const host = await User.findByPk(event.hostId)
 
     const users = await User.findAll({ // SELECT * FROM USER
       include: [Event], //
@@ -47,7 +48,7 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
 
   if (!req.user) { res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken(), users }); }
 
-  res.render('eventJoin', { event, csrfToken: req.csrfToken(),  users });
+  res.render('eventJoin', { event, csrfToken: req.csrfToken(),  users, host });
 })
 
 router.get('/login', csrfProtection, (req, res) => {
