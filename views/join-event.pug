@@ -1,0 +1,17 @@
+extends layout.pug
+
+append head
+  script(src="/public/js/events.js" type="module" defer)
+  link(rel="stylesheet" href="/public/css/event-join.css" type="text/css")
+
+block content
+  .main-container
+    .banner-container
+      img.banner(src='/'+event.EventType.eventBanner)
+    .text-container
+      p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
+      p.description-text #{event.EventType.eventDescription}
+      br
+      .button-div
+        a.button.join-button(href='/dashboard')
+      

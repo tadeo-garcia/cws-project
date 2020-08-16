@@ -1,0 +1,25 @@
+extends layout-signout.pug
+
+append head
+
+
+  link(rel="stylesheet" href="/public/css/dashboard.css" type="text/css")
+
+block content
+  .main-container
+    .dashboard-nav
+        .dashboard-links
+            a.navlink(href='/dashboard') Upcoming Events
+            a.navlink(href='/hosted') Events You're Hosting
+            a.navlink(href='/account') Account Details
+    .dashboard-container
+        .welcome-div
+            p.description-heading Welcome Home, #{user.fullName}!
+            p.description-text Who are you going to meet today?
+            a.button-bar(href='/events') Find another event!
+        .events-div
+            .attending-div
+                p.description-heading Edit Your Account
+            .form-container
+          
+

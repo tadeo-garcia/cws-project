@@ -35,6 +35,9 @@
   padding-top: 40px;
   width: 550px;
 }
+.link {
+  color: black;
+}
 
 .description-heading{
   font-size:20px;

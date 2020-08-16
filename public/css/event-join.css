@@ -5,9 +5,9 @@
   align-items: center;
 }
 
-.dashboard-nav{
-    background-color: gray;
-    height: 50px;
+.banner-container{
+    background-size: cover;
+    height: 300px;
     width:100%;
     display: flex;
     /* flex-direction: column; */
@@ -16,66 +16,47 @@
     font-variant-caps: all-small-caps;
     color: white;
     font-weight: bold;
+    overflow: hidden
 
 }
 
-.dashboard-container{
-    width: 800px;
-    height: 700px;
-    display:grid;
-    grid-template-columns: 200px 4fr;
-    grid-template-areas: 'welcome-div events-div';
+.banner{
+    width: 100%;
+    position: relative;
+    bottom: 25px;
+    
 }
 
-.welcome-div{
-    display:flex;
-    flex-direction: column;
+.banner-heading{
+  font-size: 34px;
+  padding-top: 25px;
+  position:relative;
+  
+}
 
-    /* border: 3px solid black; */
+.banner-text{
+  font-size: 18px;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.text-container{
+  padding-top: 40px;
+  padding-bottom: 25px;
+  width: 550px;
 }
 
 .description-heading{
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size:18px;
+  font-size:20px;
   font-weight: bold;
   padding-bottom: 15px;
 }
 
 .description-text{
-  padding-left: 15px;
-  padding-right: 15px;
+  text-align: justify;
   font-size:16px;
-  font-weight: bold;
 }
 
-.button-bar {
-	font-weight: bold;
-	text-align: center;
-	margin: 5px;
-	background-color: #210303;
-	color: white;
-	padding: 15px 15px;
-	border-radius: 8px;
-	font-variant-caps: all-small-caps;
-}
-.button-bar:hover{
-    color:  #d5d5d5;
-}
-
-.events-div{
-  /* border: 3px solid black; */
-  display: flex;
-  flex-direction: column;
-}
-.attending-div{
-  height:50px;
-/* border: 3px solid black; */
-}
-.events-container{
-/* border: 3px solid black; */
-}
 .events{
   width: 1000px;
   padding: 25px 0px;
@@ -146,25 +127,41 @@
 }  
 
 .button-div{
-  padding: 10px 0px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   display:flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.button {
-  text-align: center;
-  width: 200px;
-  height: 30px;
+.join-button{
+  padding: 15px 45px;
   border-radius: 5px;
   background:gray;
   color: black;
-  transition: background 1s ease;
   font-variant-caps: all-small-caps;
-  font-size:18px;
+  font-size:30px;
+}
+
+.button-div {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }  
 
 button:hover {
   background: black;
   color: white;
 }  
+
+
+
+
+
+/* .progress-bar .bar {
+  display: block;
+  height: 100%;
+  background-color: #F7BF4D;
+  position: relative;
+  overflow: hidden;
+} */ 
