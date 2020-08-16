@@ -11,7 +11,7 @@ module.exports = {
         location: 'dallas', 
         avatar: "/public/pics/profile-pics/ahmed-firdaus-N7HRLjqNDqg-unsplash.jpg", 
         fullName:'Joseph Smith', 
-        bio: "Washington received his initial military training and command with the Virginia Regiment during the French and Indian War. He was later elected to the Virginia House of Burgesses and was named a delegate to the Continental Congress, where he was appointed Commanding General of the Continental Army. He commanded American forces, allied with France, in the defeat and surrender of the British during the Siege of Yorktown. He resigned his commission after the Treaty of Paris in 1783.", 
+        bio: "Washington received his initial military training and command with the Virginia Regiment during the French and Indian War. He was later elected to the Virginia House of Burgesses and was named a delegate to the Continental Congress, where he was appointed Commanding General of the Continental Army. He commanded American forces, allied with France, in the defeat and surrender of the British during the Siege of Yorktown. He resigned his commission after the Treaty of Paris in 1783. On April 30, 1789, George Washington, standing on the balcony of Federal Hall on Wall Street in New York, took his oath of office as the first President of the United States. “As the first of every thing, in our situation will serve to establish a Precedent,” he wrote James Madison, “it is devoutly wished on my part", 
         interests:'stalking'
       },
       {
