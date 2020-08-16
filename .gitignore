@@ -111,3 +111,4 @@ dist
 # Shaie brainstorming folder
 shaiePracticeFolder/
 
+.vscode/launch.json

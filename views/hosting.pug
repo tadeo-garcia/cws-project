@@ -2,7 +2,7 @@ extends layout-signout.pug
 
 append head
   script(src="/public/js/hosting.js" type="module" defer)
-  link(rel="stylesheet" href="public/css/hosting.css" type="text/css")
+  link(rel="stylesheet" href="/public/css/hosting.css" type="text/css")
 
 block content
   .main-container
@@ -12,21 +12,22 @@ block content
     .hosting-container
       p.description-heading Please fill out all the fields to host your own event!
       .hosting-form
-        input.form-input(type="hidden" name="_csrf" value=csrfToken)
-        input.form-input(type="text" name='event' required placeholder='    Event Name')
-        input.form-input(type="textarea" name='description' required placeholder='   Brief description of the event')
-        input.form-input(type="select" name='eventType' required placeholder='    Select your event type')
-        input.form-input(type="select" name='capacity' required placeholder='    How big do you want your meeting?')
-            //- option(value=1) 1
-            //- option(value=2) 2
-            //- option(value=3) 3
-            //- option(value=4) 4
-            //- option(value=5) 5
-            //- option(value=6) 6
-            //- option(value=7) 7
-            //- option(val8e=8) 8
-            //- option(value=9) 9
-            //- option(value=10) 10
-        input.form-input(type="textarea" name='bio' required placeholder='   Tell the guests a little bit about yourself')
-        button.button(type='submit') Meet Some Strangers!
+        form#host-form(action='/hostEvent' method='POST')
+          input.form-input(type="hidden" name="_csrf" value=csrfToken)
+          select.input.form-input(type="select" name='eventType' required placeholder='    Select your event type')
+            each value in types
+              option=value.type
+          input.form-input(type="textarea" name='description' required placeholder='   Brief description of the event')
+          input.form-input(type="date" name='date' required placeholder='    Select your date')
+          input.form-input(type="time" name='time' required placeholder='    Select your time')
+          select.form-input(type="select" name='capacity' required placeholder='    How big do you want your meeting?')
+              option(value=3) 3
+              option(value=4) 4
+              option(value=5) 5
+              option(value=6) 6
+              option(value=7) 7
+              option(val8e=8) 8
+              option(value=9) 9
+              option(value=10) 10
+          button.button#host-button(type='submit') Meet Some Strangers!
     

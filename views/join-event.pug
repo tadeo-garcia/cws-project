@@ -7,11 +7,11 @@ append head
 block content
   .main-container
     .banner-container
-      img.banner(src='/'+event.EventType.eventBanner)
+      img.banner(src=event.EventType.eventBanner)
     .text-container
       p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
       p.description-text #{event.EventType.eventDescription}
       br
       .button-div
-        a.button.join-button(href='/dashboard')
+        a.button.join-button Join Event
       
