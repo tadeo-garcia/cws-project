@@ -52,7 +52,13 @@
   font-variant-caps: all-small-caps;
   font-size: 14px;
   font-weight: bold;
-}
+  transition: background 1s ease;
+}  
+
+.button:hover, button:hover {
+  background: white;
+  color: black;
+}  
 
 .already {
   text-align: center;

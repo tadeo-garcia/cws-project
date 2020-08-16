@@ -32,6 +32,11 @@ a:hover{
     font-size: 16px;
     font-family: 'Atma';
     padding-right: 150px;
+    transition: background .5s ease;
+}
+.homelink:hover{
+color: #ffffff;
+    text-shadow : 2px 5px 25px white;
 }
 
 .nav-links{
@@ -45,6 +50,7 @@ a:hover{
     font-variant-caps: all-small-caps;
     font-weight: bold;
     font-size: 14px;
+     transition: background .75s ease;
 }
 
 .flavicon {
