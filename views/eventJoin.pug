@@ -8,7 +8,7 @@ block content
       .columnOne
         .joinEventInfo
           .joinEventInfo-heading
-            h2 JOIN #{event.hostId.fullName.toUpperCase()} FOR COVID WITH STALKERS
+            h2 JOIN #{host.fullName.toUpperCase()} FOR COVID WITH STALKERS
           hr
           .joinEventInfo-info
             p #{event.date}
@@ -24,7 +24,7 @@ block content
               else if spotsLeft === 1
                 h2 HURRY! ONLY ONE SEAT LEFT!
               else
-                h2 EVENT FULL: sorry no more spots.
+                h2 EVENT FULL
         .joinEvent-capacity
           //- .progressBar
           .bar(style='width:83.3333334%')
