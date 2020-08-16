@@ -25,6 +25,27 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    font-variant-caps: all-small-caps;
+    color: white;
+    font-weight: bold;
+}
+
+.banner-heading-box{
+    position:relative;
+    bottom: 40px;
+    display:flex;
+}
+
+.banner-heading{
+  font-size: 34px;
+  padding-bottom: 50px;
+  
+}
+
+.banner-text {
+  font-size: 20px;
+  /* padding-bottom: 25px; */
+  padding-top: 50px;
 }
 
 .lower-banner-container{
@@ -48,11 +69,6 @@ h1,h4 {
     text-shadow : 5px 5px 25px #b60000;
 }
 
-.banner-text {
-    color: #ffffff;
-    text-shadow : 5px 5px 25px #b60000;
-    font-size: 20px;
-}
 
 .lower-banner-header{
     color: #120202;

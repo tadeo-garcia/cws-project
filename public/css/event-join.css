@@ -6,32 +6,29 @@
 }
 
 .banner-container{
-    background-size: cover;
-    height: 300px;
-    width:100%;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items:center;
-    font-variant-caps: all-small-caps;
-    color: white;
-    font-weight: bold;
-    overflow: hidden
-
+  background-size: cover;
+  height: 300px;
+  width:100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items:center;
+  font-variant-caps: all-small-caps;
+  color: white;
+  font-weight: bold;
+  overflow: hidden
 }
 
 .banner{
-    width: 100%;
-    position: relative;
-    bottom: 25px;
-    
+  width: 100%;
+  position: relative;
+  bottom: 25px;
 }
 
 .banner-heading{
   font-size: 34px;
   padding-top: 25px;
   position:relative;
-  
 }
 
 .banner-text{
@@ -40,102 +37,112 @@
   position: relative;
 }
 
-.text-container{
-  padding-top: 40px;
-  padding-bottom: 25px;
-  width: 550px;
+.event-container{
+  padding-top: 50px;
+  padding-bottom: 60px;
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas: "left-column right-column";
+}
+
+.left-column{
+  grid-area: 'left-column';
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-detail{
+  padding-left: 5px;
+  padding-right: 5px;
+  border:2px solid lightgray;
+  width: 300px;
+  height: 250px;
+  line-height: 20px;
 }
 
 .description-heading{
-  font-size:20px;
+  border-bottom: 2px solid lightgray;
+  padding-top: 15px;
+  font-size: 16px;
   font-weight: bold;
   padding-bottom: 15px;
+  text-align: center;
+}
+ 
+.cws-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  opacity: .7;
+  width: 300px;
+  height: 250px;
+  line-height: 15px;
+  padding-bottom: 20px;
+}
+
+.cws-title{
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cws-text{
+  font-size: 11px;
+  padding: 5px 25px;
 }
 
 .description-text{
-  text-align: justify;
-  font-size:16px;
+  font-size:14px;
 }
 
-.events{
-  width: 1000px;
-  padding: 25px 0px;
+.emoji{
+  font-size: 28px;
+}
+
+.right-column{
+  grid-area: 'right-column';
+  border: 2px solid gray;
+  height: 500px;
+  line-height: 16px;
+}
+.img{
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
+  flex-direction: row;
+  justify-content: center;
+}
+.avatar{
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 25px;
+  border: 2px solid lightgray;
+  height: 150px;
+  width: 100px;
 }
 
-.card-event {
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    min-width: 275px;
-    max-width: 275px;
-    margin: 25px;
-    /* display: inline-block; */
-  }  
-  
-.card-event > img {
-  height: 200px;
-  width: 100%;
-  /* object-fit: cover; */
-}  
-
-.card-event h2 {
-  font-size: 16px;
+.right-text-title{
+  padding: 5px 5px;
   font-weight: bold;
-  margin: 0;
-}  
-
-.card-event p {
-  /* text-align: justify; */
-  font-size: 11px;
-  opacity: .7;
-  margin: 0;
-}  
-
-.card-event .card-event-info {
-  padding: 16px;
-  display: flex;
-  /* justify-content: space-between; */
-  /* align-items: flex-end; */
-  /* position: relative; */
-  height: 100px;
-}  
-
-.card-event-info .card-event-host {
-  position: relative;
-  right: -5px;
-  top: -115px;
-  max-width: 75px;
-  border: 2px solid white;
-  height: 115px;
-}  
-
-.card-left-div {
-  width: 500px;
-  text-align: left;
-  
 }
 
-.card-event-profile {
-  position: relative;
-  left: 68px;
-  text-align: right;
-  padding:5px;
-}  
+.right-text{
+  padding: 5px 15px;
+}
 
 .button-div{
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display:flex;
   flex-direction: row;
   justify-content: center;
 }
 
 .join-button{
-  padding: 15px 45px;
+  padding: 0px 75px;
   border-radius: 5px;
   background:gray;
   color: black;
@@ -143,25 +150,13 @@
   font-size:30px;
 }
 
-.button-div {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
+.button{
+  transition: background .5s ease;
+}
+
+.button:hover {
+  background: white;
+  border:2px solid gray;
+  color: black;
 }  
 
-button:hover {
-  background: black;
-  color: white;
-}  
-
-
-
-
-
-/* .progress-bar .bar {
-  display: block;
-  height: 100%;
-  background-color: #F7BF4D;
-  position: relative;
-  overflow: hidden;
-} */ 

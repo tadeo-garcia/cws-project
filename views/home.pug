@@ -7,9 +7,11 @@ append head
 //-   script(src='/public/js/home.js' type='module' defer)
 block content
     .top-banner-container
-        h1 Everyone is a stranger...
-        p.banner-text until they're not!!!
-        a.button#link(href='/events') Check Out An Event!
+        .banner-heading-box
+            p.banner-heading Everyone is a stranger...
+            p.banner-text until they're not!!!
+        .banner-button
+            a.button#link(href='/events') Check Out An Event!
     .lower-banner-container
         .banner-div
             p.lower-banner-header Show up for a virtual gathering

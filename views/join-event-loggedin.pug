@@ -1,16 +1,40 @@
 extends layout-signout.pug
 
 append head
+  script(src="/public/js/helper.js" type="text/javascript" defer)
   script(src="/public/js/eventid.js" type="module" defer)
+  //- script(src="/public/js/helper.js" type="module" defer)
+  
   link(rel="stylesheet" href="/public/css/event-join.css" type="text/css")
-
 block content
   .main-container
     .banner-container
       img.banner(src=event.EventType.eventBanner)
-    .text-container
-      p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
-      p.description-text #{event.EventType.eventDescription}
-      br
-      .button-div
-        a.button.join-button(id=event.id href='/dashboard') Join Event
+    .event-container
+      .left-column
+        .event-detail
+          p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
+          span.description-text #{event.EventType.eventDescription}
+          br
+          span.description-text Time: #{event.time}
+          br
+          span#date-class   📅📆: #{event.date}
+          br
+          span.description-text Suggestions to bring : #{event.EventType.eventSuggestions}
+          br
+          span.description-text Size of the event: #{event.capacity} People
+        .button-div
+          a.button.join-button(id=event.id href='/dashboard') Join Event
+        .cws-detail
+          p.cws-title What is Covid With Strangers, exactly?
+          span.cws-text Covid with strangers is where five-ish strangers sit at home with a Host to have a two hour conversation. The host pics a theme but the conversation can go anywhere from there! 
+          span.cws-text You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense. Have fun with and make some new friends!
+          span.emoji  ✌
+      .right-column
+          .img
+            img.avatar(src=event.host.avatar)
+          p.right-text-title A little bit about #{event.host.fullName}:
+          p.right-text #{event.host.bio}
+          p.right-text-title A little bit more info about the event:
+          p.right-text #{event.description}
+          

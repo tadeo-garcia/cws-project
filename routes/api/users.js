@@ -42,9 +42,10 @@ router.post('/',
   handleValidationErrors,
   routeHandler(async (req, res, next) => {
 
-    const { userName, email, password } = req.body;
+    const { userName, email, fullName, password } = req.body;
     const user = await User.create({
       userName,
+      fullName,
       hashedPassword: bcrypt.hashSync(password, 10),
       email
     });

@@ -29,6 +29,8 @@ router.get('/events/:id', csrfProtection, async (req, res) => {
     ]
   })
 
+  
+
   if (!req.user) { res.render('join-event', { event: event[0], csrfToken: req.csrfToken() }); }
 
   res.render('join-event-loggedin', { event: event[0], csrfToken: req.csrfToken() });
@@ -81,7 +83,9 @@ router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
       { model: EventType }
     ]
   })
-
+  if(!req.user){
+    res.render('login-first')
+  }
   res.render('dashboard-host', { user, events })
 })
 

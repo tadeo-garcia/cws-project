@@ -17,7 +17,7 @@ block content
     .hosting-container
       p.description-heading Please fill out all the fields to host your own event!
       .hosting-form
-        form#host-form(action='/dashboard/hosting' method='POST')
+        form#host-form(action='/hostEvent' method="POST")
           input.form-input(type="hidden" name="_csrf" value=csrfToken)
           select.input.form-input(type="select" name='eventType' required placeholder='    Select your event type')
             each value in types
