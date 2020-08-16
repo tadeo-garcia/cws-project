@@ -4,49 +4,87 @@ append head
   link(rel="stylesheet" href="/public/css/eventJoin3.css" type="text/css")
 
 block content
+  main
+    .eventJoin
+      img#eventTypeBanner(src=event.EventType.eventBanner width='100%')
     .joinEvent-container
       .columnOne
         .joinEventInfo
           .joinEventInfo-heading
-            h2 JOIN #{host.fullName.toUpperCase()} FOR COVID WITH STALKERS
+            h4 JOIN #{host.fullName.toUpperCase()} FOR COVID WITH STALKERS
           hr
           .joinEventInfo-info
-            p #{event.date}
-            p #{event.time}
-            p Online Zoom
-            h5 #{url}
-            p Send to a friend that should be here (especially if you can't be here yourself!)
+            p#date #{event.date}
+            p#time #{event.time}
+            p#location Online Zoom
+            p#eventLink #{url} www.covidWithStalkers.comevents/#
+            p#handPointer Send to a friend that should behere
             hr
             .capacityAnnouncement
             - var spotsLeft = event.capacity - users.length
-              if spotsLeft > 1
-                h2  #{event.capacity - 1} SEATS LEFT!
-              else if spotsLeft === 1
-                h2 HURRY! ONLY ONE SEAT LEFT!
+              if spotsLeft > 2
+                h3  #{event.capacity - 1} SEATS LEFT!
+              else if spotsLeft === 2
+                h3 HURRY! ONLY ONE SEAT LEFT!
               else
-                h2 EVENT FULL
-        .joinEvent-capacity
-          //- .progressBar
-          .bar(style='width:83.3333334%')
-              .hostAttending
-              - var n = 2;
-                while n < users.length
-                  p.attendees-count= n++
-                  .attendees
-                while n < event.capacity
-                  p.capacityBar-count= n++
-                  .capacityBar
-                if users.length < capacity
-                  .endCapacityBarVacancy
-                else
-                  .atCapacity
-
-
+                h3 EVENT FULL
+          .joinEvent-capacity
+            //- .progressBar
+            .bar(style='width:83.3333334%')
+                .hostAttending
+                - var n = 1;
+                  while n <= users.length
+                    p.attendees-count= n++
+                    .attendees
+                  while n < event.capacity - 1
+                    p.capacityBar-count= n++
+                    .capacityBar
+                  if users.length + 1 < event.capacity
+                    .endCapacityBarVacancy
+                  else
+                    .atCapacity
         .joinEventForm
-        .teaTimeAbout
+          form(action="/event-join" method='POST')
+            label Name:
+            input(type="text" placeholder='Your Name Here' required)
+            label Email:
+            input(type="email" placeholder='Your Email Here' required)
+            label Mobile Number (optional)
+            input(type="text" placeholder='(555) 345-6789')
+            button Sign Me Up!
+            a#signMeUp(href="/events") See Other Event Times
+        .eventAbout
+          p#eventAboutHeading What is Covid with Stalkers Exactly?
+          .eventEmoji
+            p 🤷🏻‍♀️
+          hr#eventAboutLine
+          #eventAboutDescription
+            p Covid With Stalkers is where five-ish strangers sit in a  zoom room with a Host to have a two hour conversation. It's  not about anything in particular.
+            br
+            p You're meant to know pretty much nothing about thepeople    that come, aside from the fact that they all signedup for    this — just like you. It's self-selecting in thatsense.
+            br
+            p However, it may bring you comfort to know a littlesomething   about your Host. If so, just keep reading
+            .hostPointer
+            p 👉🏻
       .columnTwo
         .meetTheHost
+          h2 Meet your Host, #{host.fullName}
+          p#helpfulHint (It'll be helpful to know what they look like when you're looking for a group of confused strangers at the cafe.)
+          .polaroid
+            img#host(src=host.avatar width='275px' height='200px')
         .hostBio
+          a#facebookLink(href="#") Facebook
+          .bioDiv
+            h4#whatsup What's up?
+            p - “What’s up?!” - “Oh, not too much.” *End of conversation* We walk by hundreds of human beings every day but know so little about each of them. Let’s grab some tea and get to know each other… just because we can!
+
+            h4 What's your story?
+            p Hi ya’ll. I love the word “y’all” even though I was born and            raised in Ohio before transplanting to the East Coast for the           last 5 years. In between, I lived abroad in 4 other continents            and wrote a senior thesis about happiness. I am currently in          med school and hope to become a         global-mental-health-researcher-psychiatrist-advocate-something          along those lines, but my real hobby is thinking way too            much. I am always philosophizing about nothing and trying to          make sense of the world. Occasionally, I’ll write some of         these thoughts up on my blog. When I’m not traveling, med        schooling, or philosophizing, I love to rock climb, make ice           cream, people-watch, lift heavy things, ask too many questions          and dabble in way too many new hobbies.
+
+            h4 What might we talk about?
+            p What has been the highlight our your last month? Last year?             What wacky theories do you have about the world? What is your             favorite place in the world? What is your spirit-animal? If             you had a billion dollars and didn’t have to work, what would             you do? What is love? What was the most influential year of             your life? What’s important to you? If you had a time-machine,            what is one piece of advice you would pass along to your            18-year-old self? What makes you happy? But most importantly,           what’s been on your mind recently?
+append footer
+
 
 
 //- ${event.EventType.eventDescription}

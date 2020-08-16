@@ -1,13 +1,77 @@
-* {
+/* * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+h4 {
+  text-align: center;
+  padding-top: 5px;
+
+}
+
+.eventJoin {
+  height: 100vp;
+  position: fixed;
+  top: 0;
+  z-index: -5;
+}
+
+.columnOne, .columnTwo {
+  background-color: rgba(200, 200, 200, .8);
+  box-shadow: 0 0 10px rgb(39, 34, 34);
+}
+
+.columnOne {
+  margin-right: 3em;
+  padding: 15px;
+}
+
+
+
+#eventTypeBanner {
+  position: relative;
+  bottom: 300px;
+  top: 0px;
+  height: 30em;
 }
 
 .joinEvent-container {
+  display: flex;
+  position: absolute;
+  top: 0;
   max-width: 1020px;
   margin-left: auto;
   margin-right: auto;
   margin: 200px;
+  margin-top: 110px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* border: 1px solid lightgray; */
+}
+
+/* .joinEventInfo {
+
+} */
+
+p#date::before {
+  content: '📅';
+}
+p#time::before {
+  content: '⏰';
+}
+p#location::before {
+  content: '📍';
+}
+p#eventLink::before {
+  content: '🗣';
+}
+p#handPointer::before {
+  content: '👆🏾';
 }
 
 .attendees-count, .capacityBar-count {
@@ -24,37 +88,241 @@
 
 /* always one attendee - the host */
 .hostAttending {
-  border-radius: 10px 0 0 10px;
+  position: relative;
   background-color: darkred;
+  background-image: linear-gradient(rgb(120, 0, 0), rgb(140, 0, 0));
 }
 
+.hostAttending:after {
+  content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: calc(100% - 2px);
+	height: 50%;
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  border: 1px, solid, rgba(255, 255, 255, 0);
+  border-radius: 10px 10px, 10px, 10px;
+
+}
+
+/* .joinEvent-capacity {
+  background-color: rgba(200, 200, 200, .3);
+} */
+
 .capacityBar {
-  background-color: #aaa;
+  background-color: #888;
 }
 
 .atCapacity, .attendees,
 .hostAttending, .capacityBar,
 .endCapacityBarVacancy {
-    height: 20px;
-    width: 100%;
-    margin: 0 2px;
+  height: 20px;
+  width: 100%;
+  margin: 0 2px;
 }
 
 .attendees, .atCapacity {
+  position: relative;
   background-color: darkred;
+  background-image: linear-gradient(rgb(120, 0, 0), rgb(140, 0, 0));
+}
+
+.attendees:after, .atCapacity:after {
+  content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: calc(100% - 2px);
+	height: 50%;
+	background: linear-gradient(rgba(255, 255, 255,0.6), rgba(255,255,255,0.2));
 }
 
 .endCapacityBarVacancy {
-  background-color: #aaa;
+  background-color: #888;
 }
-.endCapacityBarVacancy, .atCapacity {
+/* .endCapacityBarVacancy, .atCapacity {
   border-radius: 0px 10px 10px 0px;
+} */
+
+
+
+.joinEventForm {
+  box-shadow: 0 0 10px lightgrey;
+  box-sizing: border-box;
+  padding-top: 2px;
 }
 
-/* .joinEventInfo
+input, label {
+  display: block;
+}
+
+input {
+  height: 50px;
+  width: 99%;
+  background-color: rgba(200, 200, 200, .7);
+  border-radius: 5px;
+  font-size: large;
+  text-align: center;
+  color: darkslategray;
+}
+
+label {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+button {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgba(100, 100, 100, .8);
+  border-radius: 5px;
+}
+
+button:after {
+  content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: calc(100% - 2px);
+	height: 50%;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  border: 1px, solid, rgba(255, 255, 255, 0);
+
+}
+
+button:hover {
+ background-color: darkred;
+}
+
+a#signMeUp {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 0;
+  color: darkslategrey
+}
+
+a#signMeUp:hover {
+  color: darkred;
+}
+
+.eventAbout {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* justify-content: center; */
+  background-color: rgba(200, 200, 200, .7);
+}
+
+#eventAboutHeading {
+  color: darkslategrey;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+}
+
+.eventEmoji {
+  content: '🤷🏻‍♀';
+  height: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+hr#eventAboutLine {
+  width: 30%;
+  margin: 0% 35% 5% 35%;
+  text-align: center;
+  height: 2px;
+  color: darkslategray;
+  background-color: gray;
+}
+
+#eventAboutDescription {
+  padding: 10%;
+  color: darkslategray;
+  font-size: x-small;
+  line-height: 2em;
+}
+
+.hostPointer {
+  text-align: center;
+  font-size: larger;
+  padding-bottom: 2em;
+}
+
+p#helpfulHint {
+  font-size: x-small;
+  color: rgb(85, 85, 85);
+  padding: 0 20px;
+
+}
+
+.polaroid {
+  width: 310px;
+  height: 220px;
+  border: 1px solid grey;
+  margin: 22px;
+  padding-top: 17px;
+  padding-bottom: 40px;
+  background-color: rgba(255, 255, 255, .8);
+
+}
+
+a#facebookLink {
+  /* display: inline-block; */
+  background-color: rgb(59, 89, 152);
+  /* padding: 0 100px; */
+  margin-left: 130px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 3px;
+  color: white;
+  margin-bottom: 50px;
+  padding: 7px;
+}
+
+h4#whatsup {
+  margin-top: 50px;
+}
+
+img#host {
+  padding-left: 17px;
+}
 
 
-.joinEventForm
-.teaTimeAbout
+.hostBio p, .hostBio h4 {
+  padding: 5px 1em;
+
+}
+
+.hostBio p {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.bioDiv {
+  border: 1px solid darkslategray;
+  background-color: rgb(211, 211, 211, .8);
+  margin: 50px 5px;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    top: 300%;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+
+
+/*
 .meetTheHost
 .hostBio */

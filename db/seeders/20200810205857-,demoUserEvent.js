@@ -29,8 +29,8 @@ return queryInterface.bulkInsert('UserEvents', [
 { UserId: 6, EventId: 4 },
 { UserId: 7, EventId: 4 },
 { UserId: 8, EventId: 4 },
-{ UserId: 9, EventId: 4 },
-{ UserId: 10, EventId: 4 },
+// { UserId: 9, EventId: 4 },
+// { UserId: 10, EventId: 4 },
 
 // event 5 2 host
 { UserId: 1, EventId: 5 },

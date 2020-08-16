@@ -3,17 +3,19 @@
     margin: 0;
     padding: 0;
  }
-    
+
+
+
 a:hover{
     color:  #d5d5d5;
-}    
+}
 
 .nav-bar {
     height: 45px;
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 12px;
-    display: flex; 
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -74,6 +76,8 @@ color: #ffffff;
 {
     background-color: #444444;
     border: 2px solid white;
-    
+
     color: white;
 }
+
+
