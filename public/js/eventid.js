@@ -1,6 +1,6 @@
 const joinButton = document.querySelector('.join-button')
 const myFunction = async (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     let id = Number(e.currentTarget.id);
     //  let id = window.location.pathname.match(/\d+/)
     await fetch('/api/eventId/userEvent', {

@@ -2,7 +2,8 @@ const hostingForm = document.querySelector('#host-form');
 console.log(hostingForm);
 
 hostingForm.addEventListener('submit', async (e) => {
-
+    e.preventDefault();
+    
     const eventTypes = {
         'Paint by Wine': 1,
         'Green Tea':2,
@@ -27,5 +28,5 @@ hostingForm.addEventListener('submit', async (e) => {
             'Content-Type': 'application/json'
         }
     });
-    window.location.href = '/dashboard';
+    window.location.href = '/dashboard/hosted';
 });

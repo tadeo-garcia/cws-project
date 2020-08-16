@@ -81,7 +81,9 @@ router.get('/dashboard/hosted', csrfProtection, async (req, res) => {
       { model: EventType }
     ]
   })
-
+  if(!req.user){
+    res.render('login-first')
+  }
   res.render('dashboard-host', { user, events })
 })
 
