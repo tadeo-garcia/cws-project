@@ -6,32 +6,30 @@
 }
 
 .dashboard-nav{
-    background-color: gray;
-    height: 50px;
-    width:100%;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items:center;
-    font-variant-caps: all-small-caps;
-    color: white;
-    font-weight: bold;
-
+  background-color: gray;
+  height: 50px;
+  width:100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items:center;
+  font-variant-caps: all-small-caps;
+  color: white;
+  font-weight: bold;
 }
 
 .dashboard-container{
-    width: 800px;
-    height: 700px;
-    display:grid;
-    grid-template-columns: 200px 4fr;
-    grid-template-areas: 'welcome-div events-div';
+  width: 850px;
+  /* height: 700px; */
+  display:grid;
+  grid-template-columns: 200px 4fr;
+  grid-template-areas: 'welcome-div events-div';
+
 }
 
 .welcome-div{
     display:flex;
     flex-direction: column;
-
-    /* border: 3px solid black; */
 }
 
 .description-heading{
@@ -64,41 +62,38 @@
     color:  #d5d5d5;
 }
 
-.events-div{
-  /* border: 3px solid black; */
+.attending-div{
+  height:5px;
+}
+.events-container{
+  width:825px;
   display: flex;
   flex-direction: column;
 }
-.attending-div{
-  height:50px;
-/* border: 3px solid black; */
+
+.events-div {
 }
-.events-container{
-/* border: 3px solid black; */
-}
+
 .events{
-  width: 1000px;
+  width: 1000 px;
   padding: 25px 0px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
 .card-event {
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    min-width: 275px;
-    max-width: 275px;
-    margin: 25px;
-    /* display: inline-block; */
-  }  
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-width: 275px;
+  max-width: 275px;
+  margin: 25px;
+}  
   
 .card-event > img {
   height: 200px;
   width: 100%;
-  /* object-fit: cover; */
 }  
 
 .card-event h2 {
@@ -108,7 +103,6 @@
 }  
 
 .card-event p {
-  /* text-align: justify; */
   font-size: 11px;
   opacity: .7;
   margin: 0;

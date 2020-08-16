@@ -30,7 +30,7 @@ module.exports = {
       type: 'Share your pets',
       eventBanner: '/public/pics/share-your-pet/patrick-hendry-1MO9VGUC138-unsplash.jpg',
       eventCard: '/public/pics/share-your-pet/eric-ward-ISg37AI2A-s-unsplash.jpg',
-      eventDescription: 'Share your pets with some stalkers!',
+      eventDescription: 'Talk about your pets for awhile!',
       eventSuggestions: 'doggos and cats',
       ageLimit: false
     },
