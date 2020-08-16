@@ -56,10 +56,16 @@
 	color: white;
 	padding: 15px 15px;
 	border-radius: 8px;
-	font-variant-caps: all-small-caps;
+  font-variant-caps: all-small-caps;
+  transition: background .5s ease;
+  
 }
 .button-bar:hover{
-    color:  #d5d5d5;
+  background: white;
+  color:  #210303;
+  border: 2px solid #210303;
+	border-radius: 8px;
+
 }
 
 .attending-div{
@@ -104,22 +110,21 @@
 
 .card-event p {
   font-size: 11px;
-  opacity: .7;
   margin: 0;
 }  
 
 .card-event .card-event-info {
-  padding: 16px;
+  padding-top: 10px;
+  padding-left: 10px;
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: flex-end; */
-  /* position: relative; */
   height: 100px;
 }  
 
+
+
 .card-event-info .card-event-host {
   position: relative;
-  right: -5px;
+  left: -15px;
   top: -115px;
   max-width: 75px;
   border: 2px solid white;
@@ -127,20 +132,20 @@
 }  
 
 .card-left-div {
-  width: 500px;
+  width: 750px;
   text-align: left;
   
 }
 
 .card-event-profile {
   position: relative;
-  left: 68px;
+  left: 50px;
   text-align: right;
   padding:5px;
 }  
 
 .button-div{
-  padding: 10px 0px;
+  padding: 25px 0px;
   display:flex;
   flex-direction: column;
   justify-content: center;

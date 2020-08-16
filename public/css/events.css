@@ -51,17 +51,23 @@
 }
 .link {
   color: black;
+  text-decoration: underline;
 }
 
 .description-heading{
-  font-size:20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size:18px;
   font-weight: bold;
   padding-bottom: 15px;
 }
 
 .description-text{
-  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size:16px;
+  font-weight: bold;
 }
 
 .events{
@@ -80,13 +86,11 @@
     min-width: 275px;
     max-width: 275px;
     margin: 25px;
-    /* display: inline-block; */
   }  
   
 .card-event > img {
   height: 200px;
   width: 100%;
-  /* object-fit: cover; */
 }  
 
 .card-event h2 {
@@ -96,25 +100,23 @@
 }  
 
 .card-event p {
-  /* text-align: justify; */
   font-size: 11px;
-  opacity: .7;
   margin: 0;
 }  
 
 .card-event .card-event-info {
-  padding: 16px;
+  padding-top: 10px;
+  padding-left: 10px;
   display: flex;
   /* justify-content: space-between; */
   /* align-items: flex-end; */
   /* position: relative; */
   height: 145px;
-  font-weight: bold;
 } 
 
 .card-event-info .card-event-host {
   position: relative;
-  right: -5px;
+  left: -15px;
   top: -115px;
   max-width: 75px;
   border: 2px solid white;
@@ -129,7 +131,7 @@
 
 .card-event-profile {
   position: relative;
-  left: 68px;
+  left: 50px;
   text-align: right;
   padding:5px;
 }  
@@ -147,12 +149,13 @@
   border-radius: 5px;
   background:gray;
   color: black;
-  transition: background 1s ease;
   font-variant-caps: all-small-caps;
   font-size:18px;
+  text-align: center;
+  transition: background 1s ease;
 }  
 
-button:hover {
+.button:hover, button:hover {
   background: black;
   color: white;
 }  

@@ -45,14 +45,19 @@
 .button { 
   background-color: #120202;
   color: white;
-  margin-top: 5px;
   border-radius: 10px;
   height: 55px;
   width: 500px;
   font-variant-caps: all-small-caps;
   font-size: 14px;
   font-weight: bold;
-}
+  transition: background 1s ease;
+}  
+
+.button:hover, button:hover {
+  background: white;
+  color: black;
+}  
 
 .already {
   margin: auto;

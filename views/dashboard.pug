@@ -29,11 +29,13 @@ block content
                             .card-event-info        
                                 .card-left-div
                                     h2 #{event.EventType.type}
+                                    p Time: #{event.time}
+                                    p.event-id Event Size: #{event.capacity}
                                     p #{event.EventType.eventDescription}
                                 h2.card-event-profile Host: #{event.host.fullName}
                                 img.card-event-host.avatar-bordered(src=event.host.avatar)
                             .button-div
-                                 
+                                a.button(href='/events/'+ event.id) Check out the event
                                 //- button(id=event.id).button.leave-button(href='/dashboard') Cancel my spot
                                 a(id=event.id).button.leave-button(href='/dashboard') Cancel my spot  
 
