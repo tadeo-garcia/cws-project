@@ -3,7 +3,7 @@ extends layout.pug
 include includes/auth-input.pug
 
 append head
-  link(rel="stylesheet" href="public/css/login-form.css" type="text/css")
+  link(rel="stylesheet" href="/public/css/login-form.css" type="text/css")
   script(src='/public/js/login.js' type='module' defer)
 
 block content
@@ -11,7 +11,7 @@ block content
     .login-div
       p.login-text Hey there stranger!
       br
-      p.description-text If you want to host your own meeting...
+      p.description-text Looks like you're not logged in.
       p.description-text Sign in here first!
     .form-container
       form#login-form(action='/token' method='POST')
@@ -22,12 +22,5 @@ block content
         input.form-input(type="password" name='password' required placeholder='    Password')
         button.form-input.button(type='submit') Sign in
       a.already(href="/signup") If you haven't signed up yet, click here!
-      //- form#demo-form(action='/token' method='POST')
-      //-   ul#errors-container
-      //-   input.form-input(type="hidden" name="_csrf" value=csrfToken)
-      //-   input.form-input(type="hidden" name='email' required placeholder='    Email Address')
-      //-   input.form-input(type="hidden" name='userName' required placeholder='    User Name')
-      //-   input.form-input(type="hidden" name='password' required placeholder='    Password')
-      //-   button.form-input.button(type='submit') Demo User Login
-      //- a.already(href="/login") If you've already done this before, click here to log in
+    
        

@@ -1,8 +1,7 @@
 extends layout-signout.pug
 
 append head
-
-
+  script(src='/public/js/cancel-event.js' type='module' defer)
   link(rel="stylesheet" href="/public/css/dashboard.css" type="text/css")
 
 block content
@@ -10,8 +9,8 @@ block content
     .dashboard-nav
         .dashboard-links
             a.navlink(href='/dashboard') Upcoming Events
-            a.navlink(href='/hosted') Events You're Hosting
-            a.navlink(href='/account') Account Details
+            a.navlink(href='/dashboard/hosted') Events You're Hosting
+            a.navlink(href='/dashboard/account') Account Details
     .dashboard-container
         .welcome-div
             p.description-heading Welcome Home, #{user.fullName}!
@@ -19,20 +18,19 @@ block content
             a.button-bar(href='/events') Find another event!
         .events-div
             .attending-div
-                p.description-heading Events you're attending:
+                p.description-heading Events you're hosting:
             .events-container
                 .events
                     each event in events
                         .card-event
                             img(src=event.EventType.eventCard)
-                            .card-event-info        
+                            .card-event-info       
                                 .card-left-div
                                     h2 #{event.EventType.type}
                                     p #{event.EventType.eventDescription}
+                                    p.event-id #{event.id}
                                 h2.card-event-profile Host: #{event.host.fullName}
                                 img.card-event-host.avatar-bordered(src=event.host.avatar)
                             .button-div
-                                a.button(href='/events/'+ event.id) Check out the event   
+                                button(id=event.id).cancel-button(href='/dashboard/hosted') Cancel Event  
 
-
-//-   script(src="/public/js/events.js" type="module" defer)

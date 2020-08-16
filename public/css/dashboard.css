@@ -148,11 +148,13 @@
 .button-div{
   padding: 10px 0px;
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .button {
+  margin: 10px 0px;
   text-align: center;
   width: 200px;
   height: 30px;
@@ -164,7 +166,8 @@
   font-size:18px;
 }  
 
-button:hover {
+.button:hover {
   background: black;
   color: white;
+  font-weight: bold;
 }  
