@@ -25,7 +25,6 @@
     height: 200px;
     width:100%;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items:center;
     font-variant-caps: all-small-caps;

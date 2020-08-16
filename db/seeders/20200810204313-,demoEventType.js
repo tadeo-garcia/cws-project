@@ -15,7 +15,7 @@ module.exports = {
       eventBanner: '/public/pics/tea-event/oriento-_Ycnch2Ez5o-unsplash.jpg',
       eventCard: '/public/pics/tea-event/manki-kim-L82-kkEBOd0-unsplash.jpg',
       eventDescription: 'Enjoy a relaxing cup of green tea',
-      eventSuggestions: 'gree tea, relaxing music',
+      eventSuggestions: 'green tea, relaxing music',
       ageLimit: false
     },
     {
@@ -27,7 +27,7 @@ module.exports = {
       ageLimit: false
     },
     {
-      type: 'Share your pets',
+      type: 'Pet Party!',
       eventBanner: '/public/pics/share-your-pet/patrick-hendry-1MO9VGUC138-unsplash.jpg',
       eventCard: '/public/pics/share-your-pet/eric-ward-ISg37AI2A-s-unsplash.jpg',
       eventDescription: 'Talk about your pets for awhile!',
