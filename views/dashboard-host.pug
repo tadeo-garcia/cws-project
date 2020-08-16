@@ -36,5 +36,6 @@ block content
                                 img.card-event-host.avatar-bordered(src=event.host.avatar)
                             .button-div
                                 //- button(id=event.id).cancel-button(href='/dashboard/hosted') Cancel Event
+                                a.button(href='/events/'+ event.id) Check out the event
                                 a(id=event.id).button.cancel-button(href='/dashboard/hosted') Cancel Event
 

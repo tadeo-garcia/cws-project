@@ -27,7 +27,7 @@ module.exports = {
       ageLimit: false
     },
     {
-      type: 'Share your pets',
+      type: 'Pet Party!',
       eventBanner: '/public/pics/share-your-pet/patrick-hendry-1MO9VGUC138-unsplash.jpg',
       eventCard: '/public/pics/share-your-pet/eric-ward-ISg37AI2A-s-unsplash.jpg',
       eventDescription: 'Talk about your pets for awhile!',
