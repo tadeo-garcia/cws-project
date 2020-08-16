@@ -15,7 +15,7 @@ module.exports = {
       eventBanner: '/public/pics/tea-event/oriento-_Ycnch2Ez5o-unsplash.jpg',
       eventCard: '/public/pics/tea-event/manki-kim-L82-kkEBOd0-unsplash.jpg',
       eventDescription: 'Enjoy a relaxing cup of green tea',
-      eventSuggestions: 'gree tea, relaxing music',
+      eventSuggestions: 'green tea, relaxing music',
       ageLimit: false
     },
     {

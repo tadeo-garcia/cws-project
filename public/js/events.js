@@ -53,4 +53,4 @@ const populateEventsList = async () => {
 
 }
 
-populateEventsList();
+populateEventsList()

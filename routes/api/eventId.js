@@ -8,33 +8,36 @@ const csrfProtection = require("csurf")({ cookie: true });
 db = require("../../db/models");
 const { Event, User, EventType, UserEvent } = db;
 
+
 router.get('/event/:id', handleValidationErrors, routeHandler(async (req, res, next) => {
 
   const eventId = req.params.id
   const event = await Event.findByPk({
     eventId,
     include: [
+
       User,
       EventType
     ]
   })
+
 
   res.json({ event })
 }))
 
 
 router.post('/userEvent', async (req, res, next) => {
-    const eventId = req.body.eventId;
+  const eventId = req.body.eventId;
 
-    // console.log(res)
-    // const eventId = Number(req.headers.referer.match(/\d+$/)[0]);
-    const { token } = req.cookies;
-    const user = await getUserFromToken(token);
-    const userEvent = await UserEvent.create({
-      eventId,
-      userId: user.id
-    });
-    res.json({ id: userEvent, user: user })
+  // console.log(res)
+  // const eventId = Number(req.headers.referer.match(/\d+$/)[0]);
+  const { token } = req.cookies;
+  const user = await getUserFromToken(token);
+  const userEvent = await UserEvent.create({
+    eventId,
+    userId: user.id
   });
+  res.json({ id: userEvent, user: user })
+});
 
 module.exports = router
