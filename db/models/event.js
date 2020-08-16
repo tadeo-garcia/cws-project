@@ -4,16 +4,16 @@ module.exports = (sequelize, DataTypes) => {
     eventTypeId: DataTypes.INTEGER,
     date: DataTypes.DATE,
     time: DataTypes.TIME,
-    userId: DataTypes.INTEGER,
+    // userId: DataTypes.INTEGER,
     hostId: DataTypes.INTEGER,
     capacity: DataTypes.INTEGER,
     description: DataTypes.TEXT
   }, {});
   Event.associate = function(models) {
     Event.belongsToMany(models.User, {
-      foriegnKey: 'eventId',
+      foriegnKey: 'EventId',
       through: 'UserEvents',
-      otherKey: 'userId',
+      otherKey: 'UserId',
       onDelete: 'cascade'
     }),
     Event.belongsTo(models.User, {

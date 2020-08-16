@@ -22,10 +22,10 @@ module.exports = {
         type: Sequelize.TIME,
         defaultValue: Sequelize.fn("NOW")
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Users'}
-      },
+      // userId: {
+      //   type: Sequelize.INTEGER,
+      //   references: { model: 'Users'}
+      // },
       hostId: {
         allowNull: false,
         type: Sequelize.INTEGER,

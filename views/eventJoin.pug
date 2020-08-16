@@ -8,7 +8,7 @@ block content
       .columnOne
         .joinEventInfo
           .joinEventInfo-heading
-            h2 JOIN #{event.host.fullName.toUpperCase()} FOR COVID WITH STALKERS
+            h2 JOIN #{event.hostId.fullName.toUpperCase()} FOR COVID WITH STALKERS
           hr
           .joinEventInfo-info
             p #{event.date}
@@ -21,8 +21,10 @@ block content
             - var spotsLeft = event.capacity - users.length
               if spotsLeft > 1
                 h2  #{event.capacity - 1} SEATS LEFT!
-              else
+              else if spotsLeft === 1
                 h2 HURRY! ONLY ONE SEAT LEFT!
+              else
+                h2 EVENT FULL: sorry no more spots.
         .joinEvent-capacity
           //- .progressBar
           .bar(style='width:83.3333334%')
@@ -31,7 +33,7 @@ block content
                 while n < users.length
                   p.attendees-count= n++
                   .attendees
-                while n < event.capacity 
+                while n < event.capacity
                   p.capacityBar-count= n++
                   .capacityBar
                 if users.length < capacity

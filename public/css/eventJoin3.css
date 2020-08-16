@@ -17,9 +17,6 @@
 .bar {
   display: flex;
   justify-content: space-between;
-  /* background-color: lawngreen; */
-  /* grid-template-columns: repeat(1fr, 1); */
-  /* grid-template-rows: repeat(1fr, 10); */
   height: 24px;
   margin: 5px auto;
 }
@@ -47,9 +44,11 @@
   background-color: darkred;
 }
 
+.endCapacityBarVacancy {
+  background-color: #aaa;
+}
 .endCapacityBarVacancy, .atCapacity {
   border-radius: 0px 10px 10px 0px;
-  background-color: #aaa;
 }
 
 /* .joinEventInfo

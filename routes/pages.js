@@ -19,29 +19,35 @@ router.get('/events', csrfProtection, async (req, res) => {
 })
 
 router.get('/events/:id', csrfProtection, async (req, res) => {
-  const eventId = req.params.id
+  const eventId = parseInt(req.params.id, 10);
   console.log(eventId);
-  const event = await Event.findAll({
-    where: { id: eventId },
-    include: [
-      { model: User, as: 'host' },
-      { model: EventType }
-    ]
+  // const event = await Event.findAll({
+  //   where: { id: eventId },
+  //   include: [
+  //     { model: User, as: 'host' },
+  //     { model: EventType }
+  //   ]
+  // })
+
+  const event = await Event.findByPk(eventId, {
+    include: [ User, EventType ],
+    through: UserEvent,
   })
-    // console.log('EVENTS', event)
+    console.log('EVENTS', event.hostId.fullName)
 
     const users = await User.findAll({ // SELECT * FROM USER
       include: [Event], //
-      through: {where: { eventId: eventId }},
+      through: {where: { eventId }},
     });
-    console.log('USERS', users);
+
+
   // const userid = req.user.id;
 
   // console.log(req.user.UserEvent)
 
   if (!req.user) { res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken(), users }); }
 
-  res.render('eventJoin', { event: event[0], csrfToken: req.csrfToken(), users });
+  res.render('eventJoin', { event, csrfToken: req.csrfToken(),  users });
 })
 
 router.get('/login', csrfProtection, (req, res) => {
