@@ -10,10 +10,41 @@ block content
   .main-container
     .banner-container
       img.banner(src=event.EventType.eventBanner)
-    .text-container
-      p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
-      p.description-text #{event.EventType.eventDescription}
-      br
-      .button-div
-        a.button.join-button Join Event
-      
+    .event-container
+      .left-column
+        .event-detail
+          p.description-heading Join #{event.host.fullName} for #{event.EventType.type} !
+          .description-text
+            span #{event.EventType.eventDescription}
+            br
+            span#date-class Date: #{event.date}
+            br
+            span Time: #{event.time}
+            br
+            span Suggestions to bring : #{event.EventType.eventSuggestions}
+            br
+            span Size of the event: #{event.capacity} People
+        .button-div
+          a.button.join-button(id=event.id href='/dashboard') Join Event
+          a.events-link(href='/events') Checkout other events
+        .cws-detail
+          p.cws-title What is Covid With Strangers, exactly?
+          span.emoji 🤷
+          span.cws-text Covid with strangers is where five-ish strangers sit at home with a Host to have a two hour conversation. The host pics a theme but the conversation can go anywhere from there! 
+          br
+          span.cws-text You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense. Have fun with and make some new friends!
+          span.emoji  ✌
+      .right-column
+          .bio-div
+            .bio
+              p.right-text-title Meet your Host, #{event.host.fullName}:
+              p.right-text #{event.host.bio}
+            .image
+              img.avatar(src=event.host.avatar)
+              a.button.bio-button(id=event.id href='www.facebook.com') facebook
+              a.button.bio-button(id=event.id href='www.twitter.com') twitter
+              a.button.bio-button(id=event.id href='www.instagram.com') instagram
+          .event-div
+            p.right-text-title A little bit more info about the event:
+            p.right-text #{event.description}
+          
