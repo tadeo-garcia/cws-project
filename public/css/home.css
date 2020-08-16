@@ -1,15 +1,21 @@
 .button {
+    margin-top: 15px;
     background-color: #210303;
     color: white;
     padding: 15px 65px;
     border-radius: 8px;
     font-variant-caps: all-small-caps;
+    transition: background .75s ease;
     font-weight: bolder;
 }
 
 .button:hover{
-    background-color: #120202;
+    border: 3px solid #3e0000;
+    color: black;
+    background-color: #ffffff;
+    opacity: .7
 }
+
 
 .top-banner-container{
     background-size: cover;
@@ -56,9 +62,6 @@ h1,h4 {
 
 .lower-banner-text{
     font-size:12px;
-}
-.button:hover{
-    color:  #d5d5d5;
 }
 
 #signup {

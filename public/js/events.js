@@ -5,16 +5,16 @@ const getEvents = async () => {
 };
 
 const editDate = (date) => {
-  let date1 = new Date(date); 
+  let date1 = new Date(date);
   const monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
-];
+    "July", "August", "September", "October", "November", "December"
+  ];
 
-const month = (monthNames[date1.getMonth()]);
-const year = date1.getFullYear()
-const day = date1.getDay()
-return month + ' ' + day + ', ' + year
-;
+  const month = (monthNames[date1.getMonth()]);
+  const year = date1.getFullYear()
+  const day = date1.getDay()
+  return month + ' ' + day + ', ' + year
+    ;
 }
 
 const createEventLi = (event) => {
@@ -33,12 +33,13 @@ const createEventLi = (event) => {
       <img src=${event.host.avatar} class="card-event-host avatar-bordered" />
     </div>
     <div class="button-div">
-      <a href="/events/${event.id}">
-      <button class="button">Sign up now</button>
-    </div>
+      <a href="/events/${event.id}" class="button">Sign Up Now <a>
+      </div>
   </div>
-  `
+    `
 };
+
+// <button class="button">Sign up now</button>
 
 const populateEventsList = async () => {
   const eventsContainer = document.querySelector('.events')

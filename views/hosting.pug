@@ -6,13 +6,18 @@ append head
 
 block content
   .main-container
+    .dashboard-nav
+          .dashboard-links
+              a.navlink(href='/dashboard') Upcoming Events
+              a.navlink(href='/dashboard/hosted') Events You're Hosting
+              a.navlink(href='/dashboard/account') Account Details
     .banner-container
       p.banner-heading Host your own event!
       p.banner-text What are you waiting for?
     .hosting-container
       p.description-heading Please fill out all the fields to host your own event!
       .hosting-form
-        form#host-form(action='/hostEvent' method='POST')
+        form#host-form(action='/dashboard/hosting' method='POST')
           input.form-input(type="hidden" name="_csrf" value=csrfToken)
           select.input.form-input(type="select" name='eventType' required placeholder='    Select your event type')
             each value in types

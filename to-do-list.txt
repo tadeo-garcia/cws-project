@@ -1,0 +1,7 @@
+X. host post - getting hung up
+2. fix reload dashboard when joining - so new joined event shows up
+3. fix event card layout in dashboard/events hosted for more than 3 events
+3.5 alter the home page banner to look like the rest
+4. fix card buttons so they all match on all pages
+5. add date, time and description to the single event pages
+6. finish setting up heroku

@@ -16,6 +16,7 @@ block content
             p.description-heading Welcome Home, #{user.fullName}!
             p.description-text Who are you going to meet today?
             a.button-bar(href='/events') Find another event!
+            a.button-bar(href='/dashboard/hosting') Host your event!
         .events-div
             .attending-div
                 p.description-heading Events you're hosting:
@@ -27,10 +28,12 @@ block content
                             .card-event-info       
                                 .card-left-div
                                     h2 #{event.EventType.type}
+                                    p Time: #{event.time}
+                                    p.event-id Event Size: #{event.capacity}
                                     p #{event.EventType.eventDescription}
-                                    p.event-id #{event.id}
                                 h2.card-event-profile Host: #{event.host.fullName}
                                 img.card-event-host.avatar-bordered(src=event.host.avatar)
                             .button-div
-                                button(id=event.id).cancel-button(href='/dashboard/hosted') Cancel Event  
+                                //- button(id=event.id).cancel-button(href='/dashboard/hosted') Cancel Event
+                                a(id=event.id).button.cancel-button(href='/dashboard/hosted') Cancel Event
 
