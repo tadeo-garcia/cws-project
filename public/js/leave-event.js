@@ -2,8 +2,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const wrapper = async () => {
         const leaveButtons = document.querySelectorAll('.leave-button')
-        console.log(leaveButtons)
-
 
         async function leaveEvent(e) {
             let eventId = Number(this.id);
