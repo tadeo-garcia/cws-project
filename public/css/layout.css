@@ -1,79 +1,95 @@
- * {
-    font-family: "Helvetica";
-    margin: 0;
-    padding: 0;
- }
-    
-a:hover{
-    color:  #d5d5d5;
-}    
+* {
+  font-family: "Helvetica";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  min-width: 850px;
+}
+
+.header__container {
+  height: 65%;
+}
+
+.footer__wrapper {
+  height: 35%;
+}
+
+a:hover {
+  color: #d5d5d5;
+}
 
 .nav-bar {
-    height: 45px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 12px;
-    display: flex; 
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #444;
-}
-.logo-div{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
+  height: 10%;
+  min-height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
 }
 
-.homelink{
-    padding-left: 15px;
-    padding-bottom: 5px;
-    color: white;
-    font-size: 16px;
-    font-family: 'Atma';
-    padding-right: 150px;
-    transition: background .5s ease;
-}
-.homelink:hover{
-color: #ffffff;
-    text-shadow : 2px 5px 25px white;
+.logo-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.nav-links{
-    padding-left: 150px;
+.homelink {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 16px;
+  font-family: "Atma";
+  padding-right: 150px;
+  transition: background 0.5s ease;
+}
+.homelink:hover {
+  color: #ffffff;
+  text-shadow: 2px 5px 25px white;
 }
 
-.navlink{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-variant-caps: all-small-caps;
-    font-weight: bold;
-    font-size: 14px;
-     transition: background .75s ease;
+.nav-links {
+  padding-left: 150px;
+}
+
+.navlink {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-variant-caps: all-small-caps;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.75s ease;
 }
 
 .flavicon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 #extrapad {
-    padding-right: 20px
+  padding-right: 20px;
 }
 
-#signup, #signout {
-    background-color: white;
-    color: black;
-    padding:7px 15px;
-    border-radius: 3px;
+#signup,
+#signout {
+  background-color: white;
+  color: black;
+  padding: 7px 15px;
+  border-radius: 3px;
 }
 
 #signup:hover,
-#signout:hover
-{
-    background-color: #444444;
-    border: 2px solid white;
-    
-    color: white;
+#signout:hover {
+  background-color: #444444;
+  border: 2px solid white;
+
+  color: white;
 }

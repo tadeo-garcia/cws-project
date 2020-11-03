@@ -1,3 +1,32 @@
+.top-banner-container {
+  background-size: cover;
+  background-image: url("/public/pics/home/bundo-kim-Ma4GJz6vgsE-unsplash.jpg");
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-variant-caps: all-small-caps;
+  color: white;
+  font-weight: bold;
+}
+
+.banner-heading-box {
+  position: relative;
+  bottom: 40px;
+  display: flex;
+}
+
+.banner-heading {
+  font-size: 56px;
+  padding-bottom: 50px;
+}
+
+.banner-text {
+  font-size: 34px;
+  padding-top: 50px;
+}
+
 .button {
   margin-top: 15px;
   background-color: #210303;
@@ -16,46 +45,17 @@
   opacity: 0.7;
 }
 
-.top-banner-container {
-  background-size: cover;
-  background-image: url("/public/pics/home/bundo-kim-Ma4GJz6vgsE-unsplash.jpg");
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-variant-caps: all-small-caps;
-  color: white;
-  font-weight: bold;
-}
-
-.banner-heading-box {
-  position: relative;
-  bottom: 40px;
-  display: flex;
-}
-
-.banner-heading {
-  font-size: 34px;
-  padding-bottom: 50px;
-}
-
-.banner-text {
-  font-size: 20px;
-  /* padding-bottom: 25px; */
-  padding-top: 50px;
-}
-
 .lower-banner-container {
   background-color: #c6c6c6;
-  height: 115px;
+  height: 20%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .banner-div {
-  margin-left: 20px;
-  margin-right: 20px;
+  /* margin-left: 20px; */
+  /* margin-right: 20px; */
+  width: 30%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -70,12 +70,12 @@ h4 {
 
 .lower-banner-header {
   color: #120202;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .lower-banner-text {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 #signup {

@@ -14,7 +14,7 @@ html(lang="en")
    
     title Covid With Strangers
   body
-  header
+  header(class='header__container')
     div.nav-bar
       div.logo-div
         img(src="/public/white_mask.png", alt="cws" width='35' height='35')
@@ -27,8 +27,8 @@ html(lang="en")
 
 
     block content
-      h1 LAYOUT PAGE
-  footer
+      //- h1 LAYOUT PAGE
+  footer(class='footer__wrapper')
     .footer-container
       .side-link-container
         span The Developers: 
@@ -44,4 +44,4 @@ html(lang="en")
         p We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.
         br
         br
-        p Checkout the #[a(class='footer__link' href='https://github.com/tadeo-garcia/cws') Github] for this project.
+        p Checkout the #[a(class='footer__link' href='https://github.com/tadeo-garcia/cws-project') Github] for this project.
