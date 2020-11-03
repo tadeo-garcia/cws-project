@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+require('dotenv').config();
 
 const apiRouter = require('./routes/api');
 const pagesRouter = require('./routes/pages');

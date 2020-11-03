@@ -1,3 +1,6 @@
+let  db_NAME = process.env.DB_DATABASE
+console.log(db_NAME);
+
 module.exports = {
     environment: process.env.NODE_ENV || "development",
     port: process.env.PORT || 8080,

@@ -10,20 +10,14 @@ const editDate = (date) => {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  // console.log(date)
   const dateFirst = date.split('-')
   const dateParts = dateFirst[2].split('T');
-  console.log(dateParts)
 
 
   const month = (monthNames[date1.getMonth()]);
   
   const year = date1.getFullYear()
   
-
-  // const day = date1.getDay()
-  // console.log(day)
-
   return month + ' ' + dateParts[0]  + ', ' + year
     ;
 }
@@ -50,7 +44,6 @@ const createEventLi = (event) => {
     `
 };
 
-// <button class="button">Sign up now</button>
 
 const populateEventsList = async () => {
   const eventsContainer = document.querySelector('.events')
