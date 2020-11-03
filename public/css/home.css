@@ -1,45 +1,43 @@
 .button {
-    margin-top: 15px;
-    background-color: #210303;
-    color: white;
-    padding: 15px 65px;
-    border-radius: 8px;
-    font-variant-caps: all-small-caps;
-    transition: background .75s ease;
-    font-weight: bolder;
+  margin-top: 15px;
+  background-color: #210303;
+  color: white;
+  padding: 15px 65px;
+  border-radius: 8px;
+  font-variant-caps: all-small-caps;
+  transition: background 0.75s ease;
+  font-weight: bolder;
 }
 
-.button:hover{
-    border: 3px solid #3e0000;
-    color: black;
-    background-color: #ffffff;
-    opacity: .7
+.button:hover {
+  border: 3px solid #3e0000;
+  color: black;
+  background-color: #ffffff;
+  opacity: 0.7;
 }
 
-
-.top-banner-container{
-    background-size: cover;
-    background-image: url('/public/pics/home/bundo-kim-Ma4GJz6vgsE-unsplash.jpg');
-    height: 330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    font-variant-caps: all-small-caps;
-    color: white;
-    font-weight: bold;
+.top-banner-container {
+  background-size: cover;
+  background-image: url("/public/pics/home/bundo-kim-Ma4GJz6vgsE-unsplash.jpg");
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-variant-caps: all-small-caps;
+  color: white;
+  font-weight: bold;
 }
 
-.banner-heading-box{
-    position:relative;
-    bottom: 40px;
-    display:flex;
+.banner-heading-box {
+  position: relative;
+  bottom: 40px;
+  display: flex;
 }
 
-.banner-heading{
+.banner-heading {
   font-size: 34px;
   padding-bottom: 50px;
-  
 }
 
 .banner-text {
@@ -48,40 +46,39 @@
   padding-top: 50px;
 }
 
-.lower-banner-container{
-    background-color: #c6c6c6;
-    height: 115px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.lower-banner-container {
+  background-color: #c6c6c6;
+  height: 115px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.banner-div{
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-h1,h4 {
-    color: #ffffff;
-    text-shadow : 5px 5px 25px #b60000;
+.banner-div {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-
-.lower-banner-header{
-    color: #120202;
-    font-size:18px;
-    font-weight: bold;
+h1,
+h4 {
+  color: #ffffff;
+  text-shadow: 5px 5px 25px #b60000;
 }
 
-.lower-banner-text{
-    font-size:12px;
+.lower-banner-header {
+  color: #120202;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lower-banner-text {
+  font-size: 12px;
 }
 
 #signup {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
-

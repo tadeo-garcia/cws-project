@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString())
   }
-// Host ID?  hasMany or belongstomany??
+  // Host ID?  hasMany or belongstomany??
   User.associate = function (models) {
     User.belongsToMany(models.Event, {
       foreignKey: 'userId',
