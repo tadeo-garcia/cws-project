@@ -37,7 +37,6 @@ demoForm.addEventListener('submit', async (e) => {
   const userName = 'userOne';
   const password = 'password';
   const _csrf = formData.get('_csrf')
-  // console.log(_csrf);
   const body = { userName, password, _csrf }
 
   const res = await fetch('/api/users/token', {

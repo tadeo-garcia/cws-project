@@ -42,12 +42,15 @@ router.post('/',
   handleValidationErrors,
   routeHandler(async (req, res, next) => {
 
+    const avatar = 'public/pics/profile-pics/ben-parker-OhKElOkQ3RE-unsplash.jpg'
+
     const { userName, email, fullName, password } = req.body;
     const user = await User.create({
       userName,
       fullName,
       hashedPassword: bcrypt.hashSync(password, 10),
-      email
+      email,
+      avatar: avatar
     });
 
     const token = await getUserToken(user);
@@ -61,7 +64,6 @@ router.post('/token',
   validateUsername,
   handleValidationErrors,
   routeHandler(async (req, res, next) => {
-    // res.json({ message: 'test' })
     const { userName, password } = req.body;
 
     const user = await User.findOne({
@@ -73,7 +75,6 @@ router.post('/token',
       }
     });
     if (!user || !bcrypt.compareSync(password, user.hashedPassword.toString())) {
-      // console.log('HERE IS THE USER' + user)
       const err = new Error('Invalid user name or password.')
       err.status = 401;
       err.title = "Unauthorized";
@@ -89,6 +90,8 @@ router.post('/token',
   }));
 
 router.delete('/session', routeHandler(async (req, res) => {
+  console.log('inside delete session')
+
   res.clearCookie('token');
   res.json({ message: 'success' });
 }));
@@ -111,14 +114,12 @@ router.post('/token-demo',
   validateUsername,
   handleValidationErrors,
   routeHandler(async (req, res, next) => {
-    // res.json({ message: 'test' })
   
     
     const demoUser = await User.findByPk(1)
     console.log(demoUser); 
 
     if (!demoUser) {
-      // console.log('HERE IS THE USER' + user)
       const err = new Error('Invalid user name or password.')
       err.status = 401;
       err.title = "Unauthorized";

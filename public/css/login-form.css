@@ -1,23 +1,26 @@
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 775px;
 }
-.login-div{
+.login-div {
   padding-top: 35px;
   padding-bottom: 0;
-  width:500px;
+  width: 500px;
 }
 
-.form-container{
+.form-container {
   background-color: white;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 400px;
 }
 
-#login-form, #demo-form {
+#login-form,
+#demo-form {
   text-align: left;
   width: 600px;
   display: flex;
@@ -25,13 +28,13 @@
   align-items: center;
 }
 
-.login-text{
+.login-text {
   text-align: left;
   font-size: 18px;
   font-weight: bold;
 }
 
-.description-text{
+.description-text {
   text-align: left;
   font-size: 14px;
 }
@@ -43,7 +46,7 @@
   margin: 7px;
 }
 
-.button { 
+.button {
   background-color: #120202;
   color: white;
   border-radius: 10px;
@@ -53,12 +56,13 @@
   font-size: 14px;
   font-weight: bold;
   transition: background 1s ease;
-}  
+}
 
-.button:hover, button:hover {
+.button:hover,
+button:hover {
   background: white;
   color: black;
-}  
+}
 
 .already {
   text-align: center;

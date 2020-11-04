@@ -46,19 +46,12 @@ router.delete('/userEvent/:id', routeHandler(async (req, res) => {
     const user = await getUserFromToken(token);
     const eventId = Number(req.params.id)
     const userId = Number(user.id)
-    console.log('~~~~')
-    console.log(userId)
-    console.log(eventId)
-    console.log('~~~~')
     const userEvent = await UserEvent.findAll({
         where: {
             eventId: eventId,
             userId: userId,
         }
     });
-    console.log('~~~~')
-    console.log(userEvent)
-    console.log('~~~~')
     await userEvent[0].destroy();
     res.json({ message: 'success' });
 }));

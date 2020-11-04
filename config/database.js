@@ -1,15 +1,10 @@
 const config = require ("./index");
 
 const db = config.db;
-// const username = db.username;
-// const password = db.password;
-// const database = db.database;
-// const host = db.host;
-
-const username = 'cws_app'
-const password = 'password'
-const database = 'cws_development'
-const host = 'localhost'
+const username = db.username;
+const password = db.password;
+const database = db.database;
+const host = db.host;
 
 module.exports = {
   development: {

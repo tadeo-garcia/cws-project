@@ -1,8 +1,6 @@
 const form = document.querySelector('#signup-form');
 const errorsContainer = document.querySelector('#errors-container');
 
-console.log('sign up script')
-
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const formData = new FormData(form);
