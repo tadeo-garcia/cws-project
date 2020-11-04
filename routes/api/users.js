@@ -42,7 +42,7 @@ router.post('/',
   handleValidationErrors,
   routeHandler(async (req, res, next) => {
 
-    const avatar = 'public/pics/profile-pics/ben-parker-OhKElOkQ3RE-unsplash.jpg'
+    const avatar = 'public/pics/profile-pics/roland-cousins-3GTHyh2lo9o-unsplash.jpg'
 
     const { userName, email, fullName, password } = req.body;
     const user = await User.create({

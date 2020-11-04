@@ -32,8 +32,9 @@
   margin-top: 15px;
   background-color: #210303;
   color: white;
-  padding: 15px 65px;
+  padding: 25px 85px;
   border-radius: 8px;
+  font-size: 28px;
   font-variant-caps: all-small-caps;
   transition: background 0.75s ease;
   font-weight: bolder;
