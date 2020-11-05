@@ -12,7 +12,6 @@ block content
         .dashboard-links
             a.navlink(href='/dashboard') Upcoming Events
             a.navlink(href='/dashboard/hosted') Events You're Hosting
-            //- a.navlink(href='/dashboard/account') Account Details
     .dashboard-container
         .welcome-div
             p.description-heading Welcome Home, #{user.fullName}!
@@ -30,7 +29,6 @@ block content
                             .card-event-info        
                                 .card-left-div
                                     h2 #{event.EventType.type}
-                                    //- p Date: #{editDate(#{event.date})}
                                     p Time: #{event.time}
                                     p.event-id Event Size: #{event.capacity}
                                     p #{event.EventType.eventDescription}
@@ -38,7 +36,6 @@ block content
                                 img.card-event-host.avatar-bordered(src=event.host.avatar)
                             .button-div
                                 a.button(href='/events/'+ event.id) Check out the event
-                                //- button(id=event.id).button.leave-button(href='/dashboard') Cancel my spot
                                 a(id=event.id).button.leave-button(href='/dashboard') Cancel my spot  
 
 
