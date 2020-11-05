@@ -6,7 +6,7 @@
 * [CWS Overview](#cws-overview)
 * [Features](#features)
 * [Technologies Used and Sample Code](#technologies-used)
-* [Moving Forward](#cws-moving-forward)
+
 
 ## CWS Overview
 
