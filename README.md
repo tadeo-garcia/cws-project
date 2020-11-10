@@ -80,7 +80,11 @@ The back-end portion of the app is build around Express.js which is a minimal ba
 ```
 db = require("../../db/models"); const { Event, User, EventType, UserEvent } = db;
 
-router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => { const events = await Event.findAll({ include: [ { model: User, as: 'host' }, { model: EventType } ] })
+router.get('/', handleValidationErrors, routeHandler(async (req, res, next) => { 
+    const events = await Event.findAll({ 
+        include: [{ model: User, as: 'host' }, 
+                   { model: EventType }] 
+    })
 
 res.json({ events })
 
